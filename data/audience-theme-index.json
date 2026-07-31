@@ -1,0 +1,2572 @@
+{
+  "export": {
+    "name": "受众维度反查题材榜",
+    "generatedAt": "2026-07-30T09:12:37.665Z",
+    "generatedAtMs": 1785402757665,
+    "source": "DataEye 剧目榜单聚合（21 个榜单）+ audienceAnalysis 真实受众画像（4 部剧参与反查）",
+    "methodology": "按受众维度反向索引题材。每部剧对 (题材 × 受众维度) 的贡献 = 剧的总热度 × 受众在该维度的占比。份额=该题材贡献/该维度总贡献。",
+    "fieldSchema": {
+      "byAgeGroup": "按年龄段反查的题材偏好",
+      "byAgeGroup.young/middle/old": "青年(18-30)/中年(31-50)/老年(51+) 三个年龄段",
+      "byAgeGroup.*.themes": "该年龄段下题材排名 Top10",
+      "byAgeGroup.*.themes[].heat": "题材在该年龄段的累计热度贡献",
+      "byAgeGroup.*.themes[].share": "题材在该年龄段的市场份额(%)",
+      "byAgeGroup.*.themes[].topPlaylets": "该题材在该年龄段的代表剧目 Top3",
+      "byCity": "按城市反查的题材偏好",
+      "byCity.<城市名>": "每个主要城市的题材排名 Top10"
+    },
+    "filters": {
+      "topNPerDim": 10,
+      "minThemeHeat": 0
+    },
+    "stats": {
+      "scannedFiles": 21,
+      "scannedRows": 588,
+      "uniquePlaylets": 487,
+      "analyzedPlaylets": 4,
+      "ageGroups": 3,
+      "cities": 12,
+      "cityList": [
+        "重庆",
+        "上海",
+        "成都",
+        "广州",
+        "苏州",
+        "西安",
+        "深圳",
+        "北京",
+        "东莞",
+        "杭州",
+        "宁波",
+        "温州"
+      ]
+    }
+  },
+  "byAgeGroup": {
+    "young": {
+      "label": "青年 (18-30岁)",
+      "totalHeat": 26874407,
+      "playletCount": 4,
+      "themes": [
+        {
+          "theme": "现代",
+          "heat": 3043687,
+          "share": 11.33,
+          "topPlaylets": [
+            {
+              "name": "苏太太高调离婚了",
+              "playletId": 3379171,
+              "heat": 1816790
+            },
+            {
+              "name": "我靠奶奶的金项链青云直上了",
+              "playletId": 4390815,
+              "heat": 1027018
+            },
+            {
+              "name": "碎月成尘",
+              "playletId": 4411258,
+              "heat": 199879
+            }
+          ]
+        },
+        {
+          "theme": "女频",
+          "heat": 2847154,
+          "share": 10.59,
+          "topPlaylets": [
+            {
+              "name": "苏太太高调离婚了",
+              "playletId": 3379171,
+              "heat": 1816790
+            },
+            {
+              "name": "我靠奶奶的金项链青云直上了",
+              "playletId": 4390815,
+              "heat": 1027018
+            },
+            {
+              "name": "凤池生春",
+              "playletId": 660249,
+              "heat": 3346
+            }
+          ]
+        },
+        {
+          "theme": "女性成长",
+          "heat": 2847154,
+          "share": 10.59,
+          "topPlaylets": [
+            {
+              "name": "苏太太高调离婚了",
+              "playletId": 3379171,
+              "heat": 1816790
+            },
+            {
+              "name": "我靠奶奶的金项链青云直上了",
+              "playletId": 4390815,
+              "heat": 1027018
+            },
+            {
+              "name": "凤池生春",
+              "playletId": 660249,
+              "heat": 3346
+            }
+          ]
+        },
+        {
+          "theme": "大女主",
+          "heat": 2847154,
+          "share": 10.59,
+          "topPlaylets": [
+            {
+              "name": "苏太太高调离婚了",
+              "playletId": 3379171,
+              "heat": 1816790
+            },
+            {
+              "name": "我靠奶奶的金项链青云直上了",
+              "playletId": 4390815,
+              "heat": 1027018
+            },
+            {
+              "name": "凤池生春",
+              "playletId": 660249,
+              "heat": 3346
+            }
+          ]
+        },
+        {
+          "theme": "都市日常",
+          "heat": 2016669,
+          "share": 7.5,
+          "topPlaylets": [
+            {
+              "name": "苏太太高调离婚了",
+              "playletId": 3379171,
+              "heat": 1816790
+            },
+            {
+              "name": "碎月成尘",
+              "playletId": 4411258,
+              "heat": 199879
+            }
+          ]
+        },
+        {
+          "theme": "总裁",
+          "heat": 2016669,
+          "share": 7.5,
+          "topPlaylets": [
+            {
+              "name": "苏太太高调离婚了",
+              "playletId": 3379171,
+              "heat": 1816790
+            },
+            {
+              "name": "碎月成尘",
+              "playletId": 4411258,
+              "heat": 199879
+            }
+          ]
+        },
+        {
+          "theme": "逆袭",
+          "heat": 1820136,
+          "share": 6.77,
+          "topPlaylets": [
+            {
+              "name": "苏太太高调离婚了",
+              "playletId": 3379171,
+              "heat": 1816790
+            },
+            {
+              "name": "凤池生春",
+              "playletId": 660249,
+              "heat": 3346
+            }
+          ]
+        },
+        {
+          "theme": "打脸虐渣",
+          "heat": 1820136,
+          "share": 6.77,
+          "topPlaylets": [
+            {
+              "name": "苏太太高调离婚了",
+              "playletId": 3379171,
+              "heat": 1816790
+            },
+            {
+              "name": "凤池生春",
+              "playletId": 660249,
+              "heat": 3346
+            }
+          ]
+        },
+        {
+          "theme": "乡村",
+          "heat": 1027018,
+          "share": 3.82,
+          "topPlaylets": [
+            {
+              "name": "我靠奶奶的金项链青云直上了",
+              "playletId": 4390815,
+              "heat": 1027018
+            }
+          ]
+        },
+        {
+          "theme": "成长",
+          "heat": 1027018,
+          "share": 3.82,
+          "topPlaylets": [
+            {
+              "name": "我靠奶奶的金项链青云直上了",
+              "playletId": 4390815,
+              "heat": 1027018
+            }
+          ]
+        }
+      ]
+    },
+    "middle": {
+      "label": "中年 (31-50岁)",
+      "totalHeat": 153083904,
+      "playletCount": 4,
+      "themes": [
+        {
+          "theme": "现代",
+          "heat": 18253858,
+          "share": 11.92,
+          "topPlaylets": [
+            {
+              "name": "苏太太高调离婚了",
+              "playletId": 3379171,
+              "heat": 11989447
+            },
+            {
+              "name": "我靠奶奶的金项链青云直上了",
+              "playletId": 4390815,
+              "heat": 4285411
+            },
+            {
+              "name": "碎月成尘",
+              "playletId": 4411258,
+              "heat": 1979000
+            }
+          ]
+        },
+        {
+          "theme": "女频",
+          "heat": 16285151,
+          "share": 10.64,
+          "topPlaylets": [
+            {
+              "name": "苏太太高调离婚了",
+              "playletId": 3379171,
+              "heat": 11989447
+            },
+            {
+              "name": "我靠奶奶的金项链青云直上了",
+              "playletId": 4390815,
+              "heat": 4285411
+            },
+            {
+              "name": "凤池生春",
+              "playletId": 660249,
+              "heat": 10293
+            }
+          ]
+        },
+        {
+          "theme": "女性成长",
+          "heat": 16285151,
+          "share": 10.64,
+          "topPlaylets": [
+            {
+              "name": "苏太太高调离婚了",
+              "playletId": 3379171,
+              "heat": 11989447
+            },
+            {
+              "name": "我靠奶奶的金项链青云直上了",
+              "playletId": 4390815,
+              "heat": 4285411
+            },
+            {
+              "name": "凤池生春",
+              "playletId": 660249,
+              "heat": 10293
+            }
+          ]
+        },
+        {
+          "theme": "大女主",
+          "heat": 16285151,
+          "share": 10.64,
+          "topPlaylets": [
+            {
+              "name": "苏太太高调离婚了",
+              "playletId": 3379171,
+              "heat": 11989447
+            },
+            {
+              "name": "我靠奶奶的金项链青云直上了",
+              "playletId": 4390815,
+              "heat": 4285411
+            },
+            {
+              "name": "凤池生春",
+              "playletId": 660249,
+              "heat": 10293
+            }
+          ]
+        },
+        {
+          "theme": "都市日常",
+          "heat": 13968447,
+          "share": 9.12,
+          "topPlaylets": [
+            {
+              "name": "苏太太高调离婚了",
+              "playletId": 3379171,
+              "heat": 11989447
+            },
+            {
+              "name": "碎月成尘",
+              "playletId": 4411258,
+              "heat": 1979000
+            }
+          ]
+        },
+        {
+          "theme": "总裁",
+          "heat": 13968447,
+          "share": 9.12,
+          "topPlaylets": [
+            {
+              "name": "苏太太高调离婚了",
+              "playletId": 3379171,
+              "heat": 11989447
+            },
+            {
+              "name": "碎月成尘",
+              "playletId": 4411258,
+              "heat": 1979000
+            }
+          ]
+        },
+        {
+          "theme": "逆袭",
+          "heat": 11999740,
+          "share": 7.84,
+          "topPlaylets": [
+            {
+              "name": "苏太太高调离婚了",
+              "playletId": 3379171,
+              "heat": 11989447
+            },
+            {
+              "name": "凤池生春",
+              "playletId": 660249,
+              "heat": 10293
+            }
+          ]
+        },
+        {
+          "theme": "打脸虐渣",
+          "heat": 11999740,
+          "share": 7.84,
+          "topPlaylets": [
+            {
+              "name": "苏太太高调离婚了",
+              "playletId": 3379171,
+              "heat": 11989447
+            },
+            {
+              "name": "凤池生春",
+              "playletId": 660249,
+              "heat": 10293
+            }
+          ]
+        },
+        {
+          "theme": "乡村",
+          "heat": 4285411,
+          "share": 2.8,
+          "topPlaylets": [
+            {
+              "name": "我靠奶奶的金项链青云直上了",
+              "playletId": 4390815,
+              "heat": 4285411
+            }
+          ]
+        },
+        {
+          "theme": "成长",
+          "heat": 4285411,
+          "share": 2.8,
+          "topPlaylets": [
+            {
+              "name": "我靠奶奶的金项链青云直上了",
+              "playletId": 4390815,
+              "heat": 4285411
+            }
+          ]
+        }
+      ]
+    },
+    "old": {
+      "label": "老年 (51岁以上)",
+      "totalHeat": 94087188,
+      "playletCount": 4,
+      "themes": [
+        {
+          "theme": "现代",
+          "heat": 11982087,
+          "share": 12.74,
+          "topPlaylets": [
+            {
+              "name": "苏太太高调离婚了",
+              "playletId": 3379171,
+              "heat": 9020045
+            },
+            {
+              "name": "碎月成尘",
+              "playletId": 4411258,
+              "heat": 1779121
+            },
+            {
+              "name": "我靠奶奶的金项链青云直上了",
+              "playletId": 4390815,
+              "heat": 1182922
+            }
+          ]
+        },
+        {
+          "theme": "都市日常",
+          "heat": 10799166,
+          "share": 11.48,
+          "topPlaylets": [
+            {
+              "name": "苏太太高调离婚了",
+              "playletId": 3379171,
+              "heat": 9020045
+            },
+            {
+              "name": "碎月成尘",
+              "playletId": 4411258,
+              "heat": 1779121
+            }
+          ]
+        },
+        {
+          "theme": "总裁",
+          "heat": 10799166,
+          "share": 11.48,
+          "topPlaylets": [
+            {
+              "name": "苏太太高调离婚了",
+              "playletId": 3379171,
+              "heat": 9020045
+            },
+            {
+              "name": "碎月成尘",
+              "playletId": 4411258,
+              "heat": 1779121
+            }
+          ]
+        },
+        {
+          "theme": "女频",
+          "heat": 10204435,
+          "share": 10.85,
+          "topPlaylets": [
+            {
+              "name": "苏太太高调离婚了",
+              "playletId": 3379171,
+              "heat": 9020045
+            },
+            {
+              "name": "我靠奶奶的金项链青云直上了",
+              "playletId": 4390815,
+              "heat": 1182922
+            },
+            {
+              "name": "凤池生春",
+              "playletId": 660249,
+              "heat": 1468
+            }
+          ]
+        },
+        {
+          "theme": "女性成长",
+          "heat": 10204435,
+          "share": 10.85,
+          "topPlaylets": [
+            {
+              "name": "苏太太高调离婚了",
+              "playletId": 3379171,
+              "heat": 9020045
+            },
+            {
+              "name": "我靠奶奶的金项链青云直上了",
+              "playletId": 4390815,
+              "heat": 1182922
+            },
+            {
+              "name": "凤池生春",
+              "playletId": 660249,
+              "heat": 1468
+            }
+          ]
+        },
+        {
+          "theme": "大女主",
+          "heat": 10204435,
+          "share": 10.85,
+          "topPlaylets": [
+            {
+              "name": "苏太太高调离婚了",
+              "playletId": 3379171,
+              "heat": 9020045
+            },
+            {
+              "name": "我靠奶奶的金项链青云直上了",
+              "playletId": 4390815,
+              "heat": 1182922
+            },
+            {
+              "name": "凤池生春",
+              "playletId": 660249,
+              "heat": 1468
+            }
+          ]
+        },
+        {
+          "theme": "逆袭",
+          "heat": 9021513,
+          "share": 9.59,
+          "topPlaylets": [
+            {
+              "name": "苏太太高调离婚了",
+              "playletId": 3379171,
+              "heat": 9020045
+            },
+            {
+              "name": "凤池生春",
+              "playletId": 660249,
+              "heat": 1468
+            }
+          ]
+        },
+        {
+          "theme": "打脸虐渣",
+          "heat": 9021513,
+          "share": 9.59,
+          "topPlaylets": [
+            {
+              "name": "苏太太高调离婚了",
+              "playletId": 3379171,
+              "heat": 9020045
+            },
+            {
+              "name": "凤池生春",
+              "playletId": 660249,
+              "heat": 1468
+            }
+          ]
+        },
+        {
+          "theme": "男频",
+          "heat": 1779121,
+          "share": 1.89,
+          "topPlaylets": [
+            {
+              "name": "碎月成尘",
+              "playletId": 4411258,
+              "heat": 1779121
+            }
+          ]
+        },
+        {
+          "theme": "大男主",
+          "heat": 1779121,
+          "share": 1.89,
+          "topPlaylets": [
+            {
+              "name": "碎月成尘",
+              "playletId": 4411258,
+              "heat": 1779121
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "byCity": {
+    "重庆": {
+      "totalHeat": 5165587,
+      "playletCount": 4,
+      "themes": [
+        {
+          "theme": "现代",
+          "heat": 633362,
+          "share": 12.26,
+          "topPlaylets": [
+            {
+              "name": "苏太太高调离婚了",
+              "playletId": 3379171,
+              "heat": 424526
+            },
+            {
+              "name": "我靠奶奶的金项链青云直上了",
+              "playletId": 4390815,
+              "heat": 120176
+            },
+            {
+              "name": "碎月成尘",
+              "playletId": 4411258,
+              "heat": 88659
+            }
+          ]
+        },
+        {
+          "theme": "女频",
+          "heat": 545021,
+          "share": 10.55,
+          "topPlaylets": [
+            {
+              "name": "苏太太高调离婚了",
+              "playletId": 3379171,
+              "heat": 424526
+            },
+            {
+              "name": "我靠奶奶的金项链青云直上了",
+              "playletId": 4390815,
+              "heat": 120176
+            },
+            {
+              "name": "凤池生春",
+              "playletId": 660249,
+              "heat": 319
+            }
+          ]
+        },
+        {
+          "theme": "女性成长",
+          "heat": 545021,
+          "share": 10.55,
+          "topPlaylets": [
+            {
+              "name": "苏太太高调离婚了",
+              "playletId": 3379171,
+              "heat": 424526
+            },
+            {
+              "name": "我靠奶奶的金项链青云直上了",
+              "playletId": 4390815,
+              "heat": 120176
+            },
+            {
+              "name": "凤池生春",
+              "playletId": 660249,
+              "heat": 319
+            }
+          ]
+        },
+        {
+          "theme": "大女主",
+          "heat": 545021,
+          "share": 10.55,
+          "topPlaylets": [
+            {
+              "name": "苏太太高调离婚了",
+              "playletId": 3379171,
+              "heat": 424526
+            },
+            {
+              "name": "我靠奶奶的金项链青云直上了",
+              "playletId": 4390815,
+              "heat": 120176
+            },
+            {
+              "name": "凤池生春",
+              "playletId": 660249,
+              "heat": 319
+            }
+          ]
+        },
+        {
+          "theme": "都市日常",
+          "heat": 513186,
+          "share": 9.93,
+          "topPlaylets": [
+            {
+              "name": "苏太太高调离婚了",
+              "playletId": 3379171,
+              "heat": 424526
+            },
+            {
+              "name": "碎月成尘",
+              "playletId": 4411258,
+              "heat": 88659
+            }
+          ]
+        },
+        {
+          "theme": "总裁",
+          "heat": 513186,
+          "share": 9.93,
+          "topPlaylets": [
+            {
+              "name": "苏太太高调离婚了",
+              "playletId": 3379171,
+              "heat": 424526
+            },
+            {
+              "name": "碎月成尘",
+              "playletId": 4411258,
+              "heat": 88659
+            }
+          ]
+        },
+        {
+          "theme": "逆袭",
+          "heat": 424845,
+          "share": 8.22,
+          "topPlaylets": [
+            {
+              "name": "苏太太高调离婚了",
+              "playletId": 3379171,
+              "heat": 424526
+            },
+            {
+              "name": "凤池生春",
+              "playletId": 660249,
+              "heat": 319
+            }
+          ]
+        },
+        {
+          "theme": "打脸虐渣",
+          "heat": 424845,
+          "share": 8.22,
+          "topPlaylets": [
+            {
+              "name": "苏太太高调离婚了",
+              "playletId": 3379171,
+              "heat": 424526
+            },
+            {
+              "name": "凤池生春",
+              "playletId": 660249,
+              "heat": 319
+            }
+          ]
+        },
+        {
+          "theme": "乡村",
+          "heat": 120176,
+          "share": 2.33,
+          "topPlaylets": [
+            {
+              "name": "我靠奶奶的金项链青云直上了",
+              "playletId": 4390815,
+              "heat": 120176
+            }
+          ]
+        },
+        {
+          "theme": "成长",
+          "heat": 120176,
+          "share": 2.33,
+          "topPlaylets": [
+            {
+              "name": "我靠奶奶的金项链青云直上了",
+              "playletId": 4390815,
+              "heat": 120176
+            }
+          ]
+        }
+      ]
+    },
+    "上海": {
+      "totalHeat": 4753473,
+      "playletCount": 4,
+      "themes": [
+        {
+          "theme": "现代",
+          "heat": 575549,
+          "share": 12.11,
+          "topPlaylets": [
+            {
+              "name": "苏太太高调离婚了",
+              "playletId": 3379171,
+              "heat": 410832
+            },
+            {
+              "name": "我靠奶奶的金项链青云直上了",
+              "playletId": 4390815,
+              "heat": 106534
+            },
+            {
+              "name": "碎月成尘",
+              "playletId": 4411258,
+              "heat": 58183
+            }
+          ]
+        },
+        {
+          "theme": "女频",
+          "heat": 517676,
+          "share": 10.89,
+          "topPlaylets": [
+            {
+              "name": "苏太太高调离婚了",
+              "playletId": 3379171,
+              "heat": 410832
+            },
+            {
+              "name": "我靠奶奶的金项链青云直上了",
+              "playletId": 4390815,
+              "heat": 106534
+            },
+            {
+              "name": "凤池生春",
+              "playletId": 660249,
+              "heat": 310
+            }
+          ]
+        },
+        {
+          "theme": "女性成长",
+          "heat": 517676,
+          "share": 10.89,
+          "topPlaylets": [
+            {
+              "name": "苏太太高调离婚了",
+              "playletId": 3379171,
+              "heat": 410832
+            },
+            {
+              "name": "我靠奶奶的金项链青云直上了",
+              "playletId": 4390815,
+              "heat": 106534
+            },
+            {
+              "name": "凤池生春",
+              "playletId": 660249,
+              "heat": 310
+            }
+          ]
+        },
+        {
+          "theme": "大女主",
+          "heat": 517676,
+          "share": 10.89,
+          "topPlaylets": [
+            {
+              "name": "苏太太高调离婚了",
+              "playletId": 3379171,
+              "heat": 410832
+            },
+            {
+              "name": "我靠奶奶的金项链青云直上了",
+              "playletId": 4390815,
+              "heat": 106534
+            },
+            {
+              "name": "凤池生春",
+              "playletId": 660249,
+              "heat": 310
+            }
+          ]
+        },
+        {
+          "theme": "都市日常",
+          "heat": 469015,
+          "share": 9.87,
+          "topPlaylets": [
+            {
+              "name": "苏太太高调离婚了",
+              "playletId": 3379171,
+              "heat": 410832
+            },
+            {
+              "name": "碎月成尘",
+              "playletId": 4411258,
+              "heat": 58183
+            }
+          ]
+        },
+        {
+          "theme": "总裁",
+          "heat": 469015,
+          "share": 9.87,
+          "topPlaylets": [
+            {
+              "name": "苏太太高调离婚了",
+              "playletId": 3379171,
+              "heat": 410832
+            },
+            {
+              "name": "碎月成尘",
+              "playletId": 4411258,
+              "heat": 58183
+            }
+          ]
+        },
+        {
+          "theme": "逆袭",
+          "heat": 411142,
+          "share": 8.65,
+          "topPlaylets": [
+            {
+              "name": "苏太太高调离婚了",
+              "playletId": 3379171,
+              "heat": 410832
+            },
+            {
+              "name": "凤池生春",
+              "playletId": 660249,
+              "heat": 310
+            }
+          ]
+        },
+        {
+          "theme": "打脸虐渣",
+          "heat": 411142,
+          "share": 8.65,
+          "topPlaylets": [
+            {
+              "name": "苏太太高调离婚了",
+              "playletId": 3379171,
+              "heat": 410832
+            },
+            {
+              "name": "凤池生春",
+              "playletId": 660249,
+              "heat": 310
+            }
+          ]
+        },
+        {
+          "theme": "乡村",
+          "heat": 106534,
+          "share": 2.24,
+          "topPlaylets": [
+            {
+              "name": "我靠奶奶的金项链青云直上了",
+              "playletId": 4390815,
+              "heat": 106534
+            }
+          ]
+        },
+        {
+          "theme": "成长",
+          "heat": 106534,
+          "share": 2.24,
+          "topPlaylets": [
+            {
+              "name": "我靠奶奶的金项链青云直上了",
+              "playletId": 4390815,
+              "heat": 106534
+            }
+          ]
+        }
+      ]
+    },
+    "成都": {
+      "totalHeat": 4264217,
+      "playletCount": 4,
+      "themes": [
+        {
+          "theme": "现代",
+          "heat": 515099,
+          "share": 12.08,
+          "topPlaylets": [
+            {
+              "name": "苏太太高调离婚了",
+              "playletId": 3379171,
+              "heat": 353772
+            },
+            {
+              "name": "我靠奶奶的金项链青云直上了",
+              "playletId": 4390815,
+              "heat": 103936
+            },
+            {
+              "name": "碎月成尘",
+              "playletId": 4411258,
+              "heat": 57391
+            }
+          ]
+        },
+        {
+          "theme": "女频",
+          "heat": 458000,
+          "share": 10.74,
+          "topPlaylets": [
+            {
+              "name": "苏太太高调离婚了",
+              "playletId": 3379171,
+              "heat": 353772
+            },
+            {
+              "name": "我靠奶奶的金项链青云直上了",
+              "playletId": 4390815,
+              "heat": 103936
+            },
+            {
+              "name": "凤池生春",
+              "playletId": 660249,
+              "heat": 292
+            }
+          ]
+        },
+        {
+          "theme": "女性成长",
+          "heat": 458000,
+          "share": 10.74,
+          "topPlaylets": [
+            {
+              "name": "苏太太高调离婚了",
+              "playletId": 3379171,
+              "heat": 353772
+            },
+            {
+              "name": "我靠奶奶的金项链青云直上了",
+              "playletId": 4390815,
+              "heat": 103936
+            },
+            {
+              "name": "凤池生春",
+              "playletId": 660249,
+              "heat": 292
+            }
+          ]
+        },
+        {
+          "theme": "大女主",
+          "heat": 458000,
+          "share": 10.74,
+          "topPlaylets": [
+            {
+              "name": "苏太太高调离婚了",
+              "playletId": 3379171,
+              "heat": 353772
+            },
+            {
+              "name": "我靠奶奶的金项链青云直上了",
+              "playletId": 4390815,
+              "heat": 103936
+            },
+            {
+              "name": "凤池生春",
+              "playletId": 660249,
+              "heat": 292
+            }
+          ]
+        },
+        {
+          "theme": "都市日常",
+          "heat": 411163,
+          "share": 9.64,
+          "topPlaylets": [
+            {
+              "name": "苏太太高调离婚了",
+              "playletId": 3379171,
+              "heat": 353772
+            },
+            {
+              "name": "碎月成尘",
+              "playletId": 4411258,
+              "heat": 57391
+            }
+          ]
+        },
+        {
+          "theme": "总裁",
+          "heat": 411163,
+          "share": 9.64,
+          "topPlaylets": [
+            {
+              "name": "苏太太高调离婚了",
+              "playletId": 3379171,
+              "heat": 353772
+            },
+            {
+              "name": "碎月成尘",
+              "playletId": 4411258,
+              "heat": 57391
+            }
+          ]
+        },
+        {
+          "theme": "逆袭",
+          "heat": 354064,
+          "share": 8.3,
+          "topPlaylets": [
+            {
+              "name": "苏太太高调离婚了",
+              "playletId": 3379171,
+              "heat": 353772
+            },
+            {
+              "name": "凤池生春",
+              "playletId": 660249,
+              "heat": 292
+            }
+          ]
+        },
+        {
+          "theme": "打脸虐渣",
+          "heat": 354064,
+          "share": 8.3,
+          "topPlaylets": [
+            {
+              "name": "苏太太高调离婚了",
+              "playletId": 3379171,
+              "heat": 353772
+            },
+            {
+              "name": "凤池生春",
+              "playletId": 660249,
+              "heat": 292
+            }
+          ]
+        },
+        {
+          "theme": "乡村",
+          "heat": 103936,
+          "share": 2.44,
+          "topPlaylets": [
+            {
+              "name": "我靠奶奶的金项链青云直上了",
+              "playletId": 4390815,
+              "heat": 103936
+            }
+          ]
+        },
+        {
+          "theme": "成长",
+          "heat": 103936,
+          "share": 2.44,
+          "topPlaylets": [
+            {
+              "name": "我靠奶奶的金项链青云直上了",
+              "playletId": 4390815,
+              "heat": 103936
+            }
+          ]
+        }
+      ]
+    },
+    "广州": {
+      "totalHeat": 3996198,
+      "playletCount": 4,
+      "themes": [
+        {
+          "theme": "现代",
+          "heat": 482625,
+          "share": 12.08,
+          "topPlaylets": [
+            {
+              "name": "苏太太高调离婚了",
+              "playletId": 3379171,
+              "heat": 326383
+            },
+            {
+              "name": "我靠奶奶的金项链青云直上了",
+              "playletId": 4390815,
+              "heat": 100038
+            },
+            {
+              "name": "碎月成尘",
+              "playletId": 4411258,
+              "heat": 56204
+            }
+          ]
+        },
+        {
+          "theme": "女频",
+          "heat": 426706,
+          "share": 10.68,
+          "topPlaylets": [
+            {
+              "name": "苏太太高调离婚了",
+              "playletId": 3379171,
+              "heat": 326383
+            },
+            {
+              "name": "我靠奶奶的金项链青云直上了",
+              "playletId": 4390815,
+              "heat": 100038
+            },
+            {
+              "name": "凤池生春",
+              "playletId": 660249,
+              "heat": 284
+            }
+          ]
+        },
+        {
+          "theme": "女性成长",
+          "heat": 426706,
+          "share": 10.68,
+          "topPlaylets": [
+            {
+              "name": "苏太太高调离婚了",
+              "playletId": 3379171,
+              "heat": 326383
+            },
+            {
+              "name": "我靠奶奶的金项链青云直上了",
+              "playletId": 4390815,
+              "heat": 100038
+            },
+            {
+              "name": "凤池生春",
+              "playletId": 660249,
+              "heat": 284
+            }
+          ]
+        },
+        {
+          "theme": "大女主",
+          "heat": 426706,
+          "share": 10.68,
+          "topPlaylets": [
+            {
+              "name": "苏太太高调离婚了",
+              "playletId": 3379171,
+              "heat": 326383
+            },
+            {
+              "name": "我靠奶奶的金项链青云直上了",
+              "playletId": 4390815,
+              "heat": 100038
+            },
+            {
+              "name": "凤池生春",
+              "playletId": 660249,
+              "heat": 284
+            }
+          ]
+        },
+        {
+          "theme": "都市日常",
+          "heat": 382587,
+          "share": 9.57,
+          "topPlaylets": [
+            {
+              "name": "苏太太高调离婚了",
+              "playletId": 3379171,
+              "heat": 326383
+            },
+            {
+              "name": "碎月成尘",
+              "playletId": 4411258,
+              "heat": 56204
+            }
+          ]
+        },
+        {
+          "theme": "总裁",
+          "heat": 382587,
+          "share": 9.57,
+          "topPlaylets": [
+            {
+              "name": "苏太太高调离婚了",
+              "playletId": 3379171,
+              "heat": 326383
+            },
+            {
+              "name": "碎月成尘",
+              "playletId": 4411258,
+              "heat": 56204
+            }
+          ]
+        },
+        {
+          "theme": "逆袭",
+          "heat": 326667,
+          "share": 8.17,
+          "topPlaylets": [
+            {
+              "name": "苏太太高调离婚了",
+              "playletId": 3379171,
+              "heat": 326383
+            },
+            {
+              "name": "凤池生春",
+              "playletId": 660249,
+              "heat": 284
+            }
+          ]
+        },
+        {
+          "theme": "打脸虐渣",
+          "heat": 326667,
+          "share": 8.17,
+          "topPlaylets": [
+            {
+              "name": "苏太太高调离婚了",
+              "playletId": 3379171,
+              "heat": 326383
+            },
+            {
+              "name": "凤池生春",
+              "playletId": 660249,
+              "heat": 284
+            }
+          ]
+        },
+        {
+          "theme": "乡村",
+          "heat": 100038,
+          "share": 2.5,
+          "topPlaylets": [
+            {
+              "name": "我靠奶奶的金项链青云直上了",
+              "playletId": 4390815,
+              "heat": 100038
+            }
+          ]
+        },
+        {
+          "theme": "成长",
+          "heat": 100038,
+          "share": 2.5,
+          "topPlaylets": [
+            {
+              "name": "我靠奶奶的金项链青云直上了",
+              "playletId": 4390815,
+              "heat": 100038
+            }
+          ]
+        }
+      ]
+    },
+    "苏州": {
+      "totalHeat": 3908468,
+      "playletCount": 4,
+      "themes": [
+        {
+          "theme": "现代",
+          "heat": 473154,
+          "share": 12.11,
+          "topPlaylets": [
+            {
+              "name": "苏太太高调离婚了",
+              "playletId": 3379171,
+              "heat": 328666
+            },
+            {
+              "name": "我靠奶奶的金项链青云直上了",
+              "playletId": 4390815,
+              "heat": 92243
+            },
+            {
+              "name": "碎月成尘",
+              "playletId": 4411258,
+              "heat": 52246
+            }
+          ]
+        },
+        {
+          "theme": "女频",
+          "heat": 421158,
+          "share": 10.78,
+          "topPlaylets": [
+            {
+              "name": "苏太太高调离婚了",
+              "playletId": 3379171,
+              "heat": 328666
+            },
+            {
+              "name": "我靠奶奶的金项链青云直上了",
+              "playletId": 4390815,
+              "heat": 92243
+            },
+            {
+              "name": "凤池生春",
+              "playletId": 660249,
+              "heat": 249
+            }
+          ]
+        },
+        {
+          "theme": "女性成长",
+          "heat": 421158,
+          "share": 10.78,
+          "topPlaylets": [
+            {
+              "name": "苏太太高调离婚了",
+              "playletId": 3379171,
+              "heat": 328666
+            },
+            {
+              "name": "我靠奶奶的金项链青云直上了",
+              "playletId": 4390815,
+              "heat": 92243
+            },
+            {
+              "name": "凤池生春",
+              "playletId": 660249,
+              "heat": 249
+            }
+          ]
+        },
+        {
+          "theme": "大女主",
+          "heat": 421158,
+          "share": 10.78,
+          "topPlaylets": [
+            {
+              "name": "苏太太高调离婚了",
+              "playletId": 3379171,
+              "heat": 328666
+            },
+            {
+              "name": "我靠奶奶的金项链青云直上了",
+              "playletId": 4390815,
+              "heat": 92243
+            },
+            {
+              "name": "凤池生春",
+              "playletId": 660249,
+              "heat": 249
+            }
+          ]
+        },
+        {
+          "theme": "都市日常",
+          "heat": 380911,
+          "share": 9.75,
+          "topPlaylets": [
+            {
+              "name": "苏太太高调离婚了",
+              "playletId": 3379171,
+              "heat": 328666
+            },
+            {
+              "name": "碎月成尘",
+              "playletId": 4411258,
+              "heat": 52246
+            }
+          ]
+        },
+        {
+          "theme": "总裁",
+          "heat": 380911,
+          "share": 9.75,
+          "topPlaylets": [
+            {
+              "name": "苏太太高调离婚了",
+              "playletId": 3379171,
+              "heat": 328666
+            },
+            {
+              "name": "碎月成尘",
+              "playletId": 4411258,
+              "heat": 52246
+            }
+          ]
+        },
+        {
+          "theme": "逆袭",
+          "heat": 328915,
+          "share": 8.42,
+          "topPlaylets": [
+            {
+              "name": "苏太太高调离婚了",
+              "playletId": 3379171,
+              "heat": 328666
+            },
+            {
+              "name": "凤池生春",
+              "playletId": 660249,
+              "heat": 249
+            }
+          ]
+        },
+        {
+          "theme": "打脸虐渣",
+          "heat": 328915,
+          "share": 8.42,
+          "topPlaylets": [
+            {
+              "name": "苏太太高调离婚了",
+              "playletId": 3379171,
+              "heat": 328666
+            },
+            {
+              "name": "凤池生春",
+              "playletId": 660249,
+              "heat": 249
+            }
+          ]
+        },
+        {
+          "theme": "乡村",
+          "heat": 92243,
+          "share": 2.36,
+          "topPlaylets": [
+            {
+              "name": "我靠奶奶的金项链青云直上了",
+              "playletId": 4390815,
+              "heat": 92243
+            }
+          ]
+        },
+        {
+          "theme": "成长",
+          "heat": 92243,
+          "share": 2.36,
+          "topPlaylets": [
+            {
+              "name": "我靠奶奶的金项链青云直上了",
+              "playletId": 4390815,
+              "heat": 92243
+            }
+          ]
+        }
+      ]
+    },
+    "西安": {
+      "totalHeat": 3626252,
+      "playletCount": 4,
+      "themes": [
+        {
+          "theme": "现代",
+          "heat": 437718,
+          "share": 12.07,
+          "topPlaylets": [
+            {
+              "name": "苏太太高调离婚了",
+              "playletId": 3379171,
+              "heat": 298994
+            },
+            {
+              "name": "我靠奶奶的金项链青云直上了",
+              "playletId": 4390815,
+              "heat": 89645
+            },
+            {
+              "name": "碎月成尘",
+              "playletId": 4411258,
+              "heat": 49079
+            }
+          ]
+        },
+        {
+          "theme": "女频",
+          "heat": 388855,
+          "share": 10.72,
+          "topPlaylets": [
+            {
+              "name": "苏太太高调离婚了",
+              "playletId": 3379171,
+              "heat": 298994
+            },
+            {
+              "name": "我靠奶奶的金项链青云直上了",
+              "playletId": 4390815,
+              "heat": 89645
+            },
+            {
+              "name": "凤池生春",
+              "playletId": 660249,
+              "heat": 216
+            }
+          ]
+        },
+        {
+          "theme": "女性成长",
+          "heat": 388855,
+          "share": 10.72,
+          "topPlaylets": [
+            {
+              "name": "苏太太高调离婚了",
+              "playletId": 3379171,
+              "heat": 298994
+            },
+            {
+              "name": "我靠奶奶的金项链青云直上了",
+              "playletId": 4390815,
+              "heat": 89645
+            },
+            {
+              "name": "凤池生春",
+              "playletId": 660249,
+              "heat": 216
+            }
+          ]
+        },
+        {
+          "theme": "大女主",
+          "heat": 388855,
+          "share": 10.72,
+          "topPlaylets": [
+            {
+              "name": "苏太太高调离婚了",
+              "playletId": 3379171,
+              "heat": 298994
+            },
+            {
+              "name": "我靠奶奶的金项链青云直上了",
+              "playletId": 4390815,
+              "heat": 89645
+            },
+            {
+              "name": "凤池生春",
+              "playletId": 660249,
+              "heat": 216
+            }
+          ]
+        },
+        {
+          "theme": "都市日常",
+          "heat": 348074,
+          "share": 9.6,
+          "topPlaylets": [
+            {
+              "name": "苏太太高调离婚了",
+              "playletId": 3379171,
+              "heat": 298994
+            },
+            {
+              "name": "碎月成尘",
+              "playletId": 4411258,
+              "heat": 49079
+            }
+          ]
+        },
+        {
+          "theme": "总裁",
+          "heat": 348074,
+          "share": 9.6,
+          "topPlaylets": [
+            {
+              "name": "苏太太高调离婚了",
+              "playletId": 3379171,
+              "heat": 298994
+            },
+            {
+              "name": "碎月成尘",
+              "playletId": 4411258,
+              "heat": 49079
+            }
+          ]
+        },
+        {
+          "theme": "逆袭",
+          "heat": 299210,
+          "share": 8.25,
+          "topPlaylets": [
+            {
+              "name": "苏太太高调离婚了",
+              "playletId": 3379171,
+              "heat": 298994
+            },
+            {
+              "name": "凤池生春",
+              "playletId": 660249,
+              "heat": 216
+            }
+          ]
+        },
+        {
+          "theme": "打脸虐渣",
+          "heat": 299210,
+          "share": 8.25,
+          "topPlaylets": [
+            {
+              "name": "苏太太高调离婚了",
+              "playletId": 3379171,
+              "heat": 298994
+            },
+            {
+              "name": "凤池生春",
+              "playletId": 660249,
+              "heat": 216
+            }
+          ]
+        },
+        {
+          "theme": "乡村",
+          "heat": 89645,
+          "share": 2.47,
+          "topPlaylets": [
+            {
+              "name": "我靠奶奶的金项链青云直上了",
+              "playletId": 4390815,
+              "heat": 89645
+            }
+          ]
+        },
+        {
+          "theme": "成长",
+          "heat": 89645,
+          "share": 2.47,
+          "topPlaylets": [
+            {
+              "name": "我靠奶奶的金项链青云直上了",
+              "playletId": 4390815,
+              "heat": 89645
+            }
+          ]
+        }
+      ]
+    },
+    "深圳": {
+      "totalHeat": 3620699,
+      "playletCount": 4,
+      "themes": [
+        {
+          "theme": "现代",
+          "heat": 433168,
+          "share": 11.96,
+          "topPlaylets": [
+            {
+              "name": "苏太太高调离婚了",
+              "playletId": 3379171,
+              "heat": 287582
+            },
+            {
+              "name": "我靠奶奶的金项链青云直上了",
+              "playletId": 4390815,
+              "heat": 98090
+            },
+            {
+              "name": "碎月成尘",
+              "playletId": 4411258,
+              "heat": 47496
+            }
+          ]
+        },
+        {
+          "theme": "女频",
+          "heat": 385947,
+          "share": 10.66,
+          "topPlaylets": [
+            {
+              "name": "苏太太高调离婚了",
+              "playletId": 3379171,
+              "heat": 287582
+            },
+            {
+              "name": "我靠奶奶的金项链青云直上了",
+              "playletId": 4390815,
+              "heat": 98090
+            },
+            {
+              "name": "凤池生春",
+              "playletId": 660249,
+              "heat": 275
+            }
+          ]
+        },
+        {
+          "theme": "女性成长",
+          "heat": 385947,
+          "share": 10.66,
+          "topPlaylets": [
+            {
+              "name": "苏太太高调离婚了",
+              "playletId": 3379171,
+              "heat": 287582
+            },
+            {
+              "name": "我靠奶奶的金项链青云直上了",
+              "playletId": 4390815,
+              "heat": 98090
+            },
+            {
+              "name": "凤池生春",
+              "playletId": 660249,
+              "heat": 275
+            }
+          ]
+        },
+        {
+          "theme": "大女主",
+          "heat": 385947,
+          "share": 10.66,
+          "topPlaylets": [
+            {
+              "name": "苏太太高调离婚了",
+              "playletId": 3379171,
+              "heat": 287582
+            },
+            {
+              "name": "我靠奶奶的金项链青云直上了",
+              "playletId": 4390815,
+              "heat": 98090
+            },
+            {
+              "name": "凤池生春",
+              "playletId": 660249,
+              "heat": 275
+            }
+          ]
+        },
+        {
+          "theme": "都市日常",
+          "heat": 335078,
+          "share": 9.25,
+          "topPlaylets": [
+            {
+              "name": "苏太太高调离婚了",
+              "playletId": 3379171,
+              "heat": 287582
+            },
+            {
+              "name": "碎月成尘",
+              "playletId": 4411258,
+              "heat": 47496
+            }
+          ]
+        },
+        {
+          "theme": "总裁",
+          "heat": 335078,
+          "share": 9.25,
+          "topPlaylets": [
+            {
+              "name": "苏太太高调离婚了",
+              "playletId": 3379171,
+              "heat": 287582
+            },
+            {
+              "name": "碎月成尘",
+              "playletId": 4411258,
+              "heat": 47496
+            }
+          ]
+        },
+        {
+          "theme": "逆袭",
+          "heat": 287857,
+          "share": 7.95,
+          "topPlaylets": [
+            {
+              "name": "苏太太高调离婚了",
+              "playletId": 3379171,
+              "heat": 287582
+            },
+            {
+              "name": "凤池生春",
+              "playletId": 660249,
+              "heat": 275
+            }
+          ]
+        },
+        {
+          "theme": "打脸虐渣",
+          "heat": 287857,
+          "share": 7.95,
+          "topPlaylets": [
+            {
+              "name": "苏太太高调离婚了",
+              "playletId": 3379171,
+              "heat": 287582
+            },
+            {
+              "name": "凤池生春",
+              "playletId": 660249,
+              "heat": 275
+            }
+          ]
+        },
+        {
+          "theme": "乡村",
+          "heat": 98090,
+          "share": 2.71,
+          "topPlaylets": [
+            {
+              "name": "我靠奶奶的金项链青云直上了",
+              "playletId": 4390815,
+              "heat": 98090
+            }
+          ]
+        },
+        {
+          "theme": "成长",
+          "heat": 98090,
+          "share": 2.71,
+          "topPlaylets": [
+            {
+              "name": "我靠奶奶的金项链青云直上了",
+              "playletId": 4390815,
+              "heat": 98090
+            }
+          ]
+        }
+      ]
+    },
+    "北京": {
+      "totalHeat": 3455547,
+      "playletCount": 3,
+      "themes": [
+        {
+          "theme": "女频",
+          "heat": 399368,
+          "share": 11.56,
+          "topPlaylets": [
+            {
+              "name": "苏太太高调离婚了",
+              "playletId": 3379171,
+              "heat": 312689
+            },
+            {
+              "name": "我靠奶奶的金项链青云直上了",
+              "playletId": 4390815,
+              "heat": 86397
+            },
+            {
+              "name": "凤池生春",
+              "playletId": 660249,
+              "heat": 282
+            }
+          ]
+        },
+        {
+          "theme": "女性成长",
+          "heat": 399368,
+          "share": 11.56,
+          "topPlaylets": [
+            {
+              "name": "苏太太高调离婚了",
+              "playletId": 3379171,
+              "heat": 312689
+            },
+            {
+              "name": "我靠奶奶的金项链青云直上了",
+              "playletId": 4390815,
+              "heat": 86397
+            },
+            {
+              "name": "凤池生春",
+              "playletId": 660249,
+              "heat": 282
+            }
+          ]
+        },
+        {
+          "theme": "大女主",
+          "heat": 399368,
+          "share": 11.56,
+          "topPlaylets": [
+            {
+              "name": "苏太太高调离婚了",
+              "playletId": 3379171,
+              "heat": 312689
+            },
+            {
+              "name": "我靠奶奶的金项链青云直上了",
+              "playletId": 4390815,
+              "heat": 86397
+            },
+            {
+              "name": "凤池生春",
+              "playletId": 660249,
+              "heat": 282
+            }
+          ]
+        },
+        {
+          "theme": "现代",
+          "heat": 399086,
+          "share": 11.55,
+          "topPlaylets": [
+            {
+              "name": "苏太太高调离婚了",
+              "playletId": 3379171,
+              "heat": 312689
+            },
+            {
+              "name": "我靠奶奶的金项链青云直上了",
+              "playletId": 4390815,
+              "heat": 86397
+            }
+          ]
+        },
+        {
+          "theme": "逆袭",
+          "heat": 312971,
+          "share": 9.06,
+          "topPlaylets": [
+            {
+              "name": "苏太太高调离婚了",
+              "playletId": 3379171,
+              "heat": 312689
+            },
+            {
+              "name": "凤池生春",
+              "playletId": 660249,
+              "heat": 282
+            }
+          ]
+        },
+        {
+          "theme": "打脸虐渣",
+          "heat": 312971,
+          "share": 9.06,
+          "topPlaylets": [
+            {
+              "name": "苏太太高调离婚了",
+              "playletId": 3379171,
+              "heat": 312689
+            },
+            {
+              "name": "凤池生春",
+              "playletId": 660249,
+              "heat": 282
+            }
+          ]
+        },
+        {
+          "theme": "都市日常",
+          "heat": 312689,
+          "share": 9.05,
+          "topPlaylets": [
+            {
+              "name": "苏太太高调离婚了",
+              "playletId": 3379171,
+              "heat": 312689
+            }
+          ]
+        },
+        {
+          "theme": "总裁",
+          "heat": 312689,
+          "share": 9.05,
+          "topPlaylets": [
+            {
+              "name": "苏太太高调离婚了",
+              "playletId": 3379171,
+              "heat": 312689
+            }
+          ]
+        },
+        {
+          "theme": "乡村",
+          "heat": 86397,
+          "share": 2.5,
+          "topPlaylets": [
+            {
+              "name": "我靠奶奶的金项链青云直上了",
+              "playletId": 4390815,
+              "heat": 86397
+            }
+          ]
+        },
+        {
+          "theme": "成长",
+          "heat": 86397,
+          "share": 2.5,
+          "topPlaylets": [
+            {
+              "name": "我靠奶奶的金项链青云直上了",
+              "playletId": 4390815,
+              "heat": 86397
+            }
+          ]
+        }
+      ]
+    },
+    "东莞": {
+      "totalHeat": 3382420,
+      "playletCount": 4,
+      "themes": [
+        {
+          "theme": "现代",
+          "heat": 411824,
+          "share": 12.18,
+          "topPlaylets": [
+            {
+              "name": "苏太太高调离婚了",
+              "playletId": 3379171,
+              "heat": 264758
+            },
+            {
+              "name": "我靠奶奶的金项链青云直上了",
+              "playletId": 4390815,
+              "heat": 87696
+            },
+            {
+              "name": "碎月成尘",
+              "playletId": 4411258,
+              "heat": 59370
+            }
+          ]
+        },
+        {
+          "theme": "女频",
+          "heat": 352673,
+          "share": 10.43,
+          "topPlaylets": [
+            {
+              "name": "苏太太高调离婚了",
+              "playletId": 3379171,
+              "heat": 264758
+            },
+            {
+              "name": "我靠奶奶的金项链青云直上了",
+              "playletId": 4390815,
+              "heat": 87696
+            },
+            {
+              "name": "凤池生春",
+              "playletId": 660249,
+              "heat": 219
+            }
+          ]
+        },
+        {
+          "theme": "女性成长",
+          "heat": 352673,
+          "share": 10.43,
+          "topPlaylets": [
+            {
+              "name": "苏太太高调离婚了",
+              "playletId": 3379171,
+              "heat": 264758
+            },
+            {
+              "name": "我靠奶奶的金项链青云直上了",
+              "playletId": 4390815,
+              "heat": 87696
+            },
+            {
+              "name": "凤池生春",
+              "playletId": 660249,
+              "heat": 219
+            }
+          ]
+        },
+        {
+          "theme": "大女主",
+          "heat": 352673,
+          "share": 10.43,
+          "topPlaylets": [
+            {
+              "name": "苏太太高调离婚了",
+              "playletId": 3379171,
+              "heat": 264758
+            },
+            {
+              "name": "我靠奶奶的金项链青云直上了",
+              "playletId": 4390815,
+              "heat": 87696
+            },
+            {
+              "name": "凤池生春",
+              "playletId": 660249,
+              "heat": 219
+            }
+          ]
+        },
+        {
+          "theme": "都市日常",
+          "heat": 324128,
+          "share": 9.58,
+          "topPlaylets": [
+            {
+              "name": "苏太太高调离婚了",
+              "playletId": 3379171,
+              "heat": 264758
+            },
+            {
+              "name": "碎月成尘",
+              "playletId": 4411258,
+              "heat": 59370
+            }
+          ]
+        },
+        {
+          "theme": "总裁",
+          "heat": 324128,
+          "share": 9.58,
+          "topPlaylets": [
+            {
+              "name": "苏太太高调离婚了",
+              "playletId": 3379171,
+              "heat": 264758
+            },
+            {
+              "name": "碎月成尘",
+              "playletId": 4411258,
+              "heat": 59370
+            }
+          ]
+        },
+        {
+          "theme": "逆袭",
+          "heat": 264977,
+          "share": 7.83,
+          "topPlaylets": [
+            {
+              "name": "苏太太高调离婚了",
+              "playletId": 3379171,
+              "heat": 264758
+            },
+            {
+              "name": "凤池生春",
+              "playletId": 660249,
+              "heat": 219
+            }
+          ]
+        },
+        {
+          "theme": "打脸虐渣",
+          "heat": 264977,
+          "share": 7.83,
+          "topPlaylets": [
+            {
+              "name": "苏太太高调离婚了",
+              "playletId": 3379171,
+              "heat": 264758
+            },
+            {
+              "name": "凤池生春",
+              "playletId": 660249,
+              "heat": 219
+            }
+          ]
+        },
+        {
+          "theme": "乡村",
+          "heat": 87696,
+          "share": 2.59,
+          "topPlaylets": [
+            {
+              "name": "我靠奶奶的金项链青云直上了",
+              "playletId": 4390815,
+              "heat": 87696
+            }
+          ]
+        },
+        {
+          "theme": "成长",
+          "heat": 87696,
+          "share": 2.59,
+          "topPlaylets": [
+            {
+              "name": "我靠奶奶的金项链青云直上了",
+              "playletId": 4390815,
+              "heat": 87696
+            }
+          ]
+        }
+      ]
+    },
+    "杭州": {
+      "totalHeat": 3080875,
+      "playletCount": 3,
+      "themes": [
+        {
+          "theme": "女频",
+          "heat": 355980,
+          "share": 11.55,
+          "topPlaylets": [
+            {
+              "name": "苏太太高调离婚了",
+              "playletId": 3379171,
+              "heat": 278453
+            },
+            {
+              "name": "我靠奶奶的金项链青云直上了",
+              "playletId": 4390815,
+              "heat": 77302
+            },
+            {
+              "name": "凤池生春",
+              "playletId": 660249,
+              "heat": 225
+            }
+          ]
+        },
+        {
+          "theme": "女性成长",
+          "heat": 355980,
+          "share": 11.55,
+          "topPlaylets": [
+            {
+              "name": "苏太太高调离婚了",
+              "playletId": 3379171,
+              "heat": 278453
+            },
+            {
+              "name": "我靠奶奶的金项链青云直上了",
+              "playletId": 4390815,
+              "heat": 77302
+            },
+            {
+              "name": "凤池生春",
+              "playletId": 660249,
+              "heat": 225
+            }
+          ]
+        },
+        {
+          "theme": "大女主",
+          "heat": 355980,
+          "share": 11.55,
+          "topPlaylets": [
+            {
+              "name": "苏太太高调离婚了",
+              "playletId": 3379171,
+              "heat": 278453
+            },
+            {
+              "name": "我靠奶奶的金项链青云直上了",
+              "playletId": 4390815,
+              "heat": 77302
+            },
+            {
+              "name": "凤池生春",
+              "playletId": 660249,
+              "heat": 225
+            }
+          ]
+        },
+        {
+          "theme": "现代",
+          "heat": 355755,
+          "share": 11.55,
+          "topPlaylets": [
+            {
+              "name": "苏太太高调离婚了",
+              "playletId": 3379171,
+              "heat": 278453
+            },
+            {
+              "name": "我靠奶奶的金项链青云直上了",
+              "playletId": 4390815,
+              "heat": 77302
+            }
+          ]
+        },
+        {
+          "theme": "逆袭",
+          "heat": 278678,
+          "share": 9.05,
+          "topPlaylets": [
+            {
+              "name": "苏太太高调离婚了",
+              "playletId": 3379171,
+              "heat": 278453
+            },
+            {
+              "name": "凤池生春",
+              "playletId": 660249,
+              "heat": 225
+            }
+          ]
+        },
+        {
+          "theme": "打脸虐渣",
+          "heat": 278678,
+          "share": 9.05,
+          "topPlaylets": [
+            {
+              "name": "苏太太高调离婚了",
+              "playletId": 3379171,
+              "heat": 278453
+            },
+            {
+              "name": "凤池生春",
+              "playletId": 660249,
+              "heat": 225
+            }
+          ]
+        },
+        {
+          "theme": "都市日常",
+          "heat": 278453,
+          "share": 9.04,
+          "topPlaylets": [
+            {
+              "name": "苏太太高调离婚了",
+              "playletId": 3379171,
+              "heat": 278453
+            }
+          ]
+        },
+        {
+          "theme": "总裁",
+          "heat": 278453,
+          "share": 9.04,
+          "topPlaylets": [
+            {
+              "name": "苏太太高调离婚了",
+              "playletId": 3379171,
+              "heat": 278453
+            }
+          ]
+        },
+        {
+          "theme": "乡村",
+          "heat": 77302,
+          "share": 2.51,
+          "topPlaylets": [
+            {
+              "name": "我靠奶奶的金项链青云直上了",
+              "playletId": 4390815,
+              "heat": 77302
+            }
+          ]
+        },
+        {
+          "theme": "成长",
+          "heat": 77302,
+          "share": 2.51,
+          "topPlaylets": [
+            {
+              "name": "我靠奶奶的金项链青云直上了",
+              "playletId": 4390815,
+              "heat": 77302
+            }
+          ]
+        }
+      ]
+    },
+    "宁波": {
+      "totalHeat": 231543,
+      "playletCount": 1,
+      "themes": [
+        {
+          "theme": "男频",
+          "heat": 46309,
+          "share": 20,
+          "topPlaylets": [
+            {
+              "name": "碎月成尘",
+              "playletId": 4411258,
+              "heat": 46309
+            }
+          ]
+        },
+        {
+          "theme": "现代",
+          "heat": 46309,
+          "share": 20,
+          "topPlaylets": [
+            {
+              "name": "碎月成尘",
+              "playletId": 4411258,
+              "heat": 46309
+            }
+          ]
+        },
+        {
+          "theme": "都市日常",
+          "heat": 46309,
+          "share": 20,
+          "topPlaylets": [
+            {
+              "name": "碎月成尘",
+              "playletId": 4411258,
+              "heat": 46309
+            }
+          ]
+        },
+        {
+          "theme": "总裁",
+          "heat": 46309,
+          "share": 20,
+          "topPlaylets": [
+            {
+              "name": "碎月成尘",
+              "playletId": 4411258,
+              "heat": 46309
+            }
+          ]
+        },
+        {
+          "theme": "大男主",
+          "heat": 46309,
+          "share": 20,
+          "topPlaylets": [
+            {
+              "name": "碎月成尘",
+              "playletId": 4411258,
+              "heat": 46309
+            }
+          ]
+        }
+      ]
+    },
+    "温州": {
+      "totalHeat": 221648,
+      "playletCount": 1,
+      "themes": [
+        {
+          "theme": "男频",
+          "heat": 44330,
+          "share": 20,
+          "topPlaylets": [
+            {
+              "name": "碎月成尘",
+              "playletId": 4411258,
+              "heat": 44330
+            }
+          ]
+        },
+        {
+          "theme": "现代",
+          "heat": 44330,
+          "share": 20,
+          "topPlaylets": [
+            {
+              "name": "碎月成尘",
+              "playletId": 4411258,
+              "heat": 44330
+            }
+          ]
+        },
+        {
+          "theme": "都市日常",
+          "heat": 44330,
+          "share": 20,
+          "topPlaylets": [
+            {
+              "name": "碎月成尘",
+              "playletId": 4411258,
+              "heat": 44330
+            }
+          ]
+        },
+        {
+          "theme": "总裁",
+          "heat": 44330,
+          "share": 20,
+          "topPlaylets": [
+            {
+              "name": "碎月成尘",
+              "playletId": 4411258,
+              "heat": 44330
+            }
+          ]
+        },
+        {
+          "theme": "大男主",
+          "heat": 44330,
+          "share": 20,
+          "topPlaylets": [
+            {
+              "name": "碎月成尘",
+              "playletId": 4411258,
+              "heat": 44330
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

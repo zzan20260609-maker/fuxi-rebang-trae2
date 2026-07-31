@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>孚希题材榜 · 受众画像分析平台</title>
+<script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", sans-serif;
+  background: #0a0e27;
+  color: #e8e8f0;
+  min-height: 100vh;
+}
+
+.navbar {
+  background: linear-gradient(90deg, rgba(15,20,50,0.95), rgba(30,35,70,0.95));
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(78,205,196,0.15);
+  padding: 14px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.brand { display: flex; align-items: center; gap: 12px; }
+.brand-logo {
+  width: 36px; height: 36px;
+  background: linear-gradient(135deg, #ff6b9d, #4ecdc4);
+  border-radius: 9px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20px;
+  box-shadow: 0 4px 12px rgba(255,107,157,0.3);
+}
+.brand-text h1 {
+  font-size: 17px;
+  background: linear-gradient(90deg, #ff6b9d, #fec46d, #4ecdc4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: 1px;
+}
+.brand-text .tagline { font-size: 10px; color: #888; margin-top: 2px; }
+.nav-menu { display: flex; gap: 24px; }
+.nav-menu a {
+  color: #a0a0c0;
+  text-decoration: none;
+  font-size: 13px;
+  padding: 6px 12px;
+  border-radius: 6px;
+  transition: all 0.2s;
+}
+.nav-menu a:hover, .nav-menu a.active {
+  color: #4ecdc4;
+  background: rgba(78,205,196,0.1);
+}
+.nav-stats { display: flex; gap: 18px; }
+.nav-stat { text-align: center; }
+.nav-stat-num { color: #4ecdc4; font-size: 15px; font-weight: 600; }
+.nav-stat-label { color: #666; font-size: 9px; }
+
+.layout {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 16px;
+  padding: 16px 24px;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.sidebar {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 12px;
+  padding: 12px;
+  height: calc(100vh - 130px);
+  position: sticky;
+  top: 90px;
+  overflow-y: auto;
+}
+.sidebar::-webkit-scrollbar { width: 5px; }
+.sidebar::-webkit-scrollbar-thumb { background: rgba(78,205,196,0.3); border-radius: 3px; }
+.sidebar-title {
+  font-size: 12px;
+  color: #888;
+  padding: 6px 8px 10px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.sidebar-title::before {
+  content: ''; width: 3px; height: 12px;
+  background: #4ecdc4; border-radius: 1px;
+}
+.theme-item {
+  padding: 9px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-bottom: 3px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 13px;
+  border-left: 3px solid transparent;
+}
+.theme-item:hover { background: rgba(78,205,196,0.08); }
+.theme-item.active {
+  background: linear-gradient(90deg, rgba(255,107,157,0.15), rgba(78,205,196,0.1));
+  border-left-color: #4ecdc4;
+}
+.theme-item .pos {
+  width: 22px; height: 22px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.08);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 11px; font-weight: 600;
+  color: #888;
+}
+.theme-item.active .pos { background: #4ecdc4; color: #0a0e27; }
+.theme-item .name { flex: 1; color: #c0c0d0; }
+.theme-item.active .name { color: #fff; font-weight: 500; }
+.theme-item .heat { font-size: 10px; color: #fec46d; }
+
+.main { display: flex; flex-direction: column; gap: 14px; }
+
+.theme-banner {
+  background: linear-gradient(135deg, rgba(255,107,157,0.08), rgba(78,205,196,0.08));
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 14px;
+  padding: 20px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+.theme-banner::before {
+  content: '';
+  position: absolute;
+  right: -50px; top: -50px;
+  width: 200px; height: 200px;
+  background: radial-gradient(circle, rgba(78,205,196,0.15), transparent 70%);
+  border-radius: 50%;
+}
+.theme-banner-info { position: relative; z-index: 1; }
+.theme-banner-rank { font-size: 12px; color: #888; margin-bottom: 4px; }
+.theme-banner-name {
+  font-size: 30px;
+  font-weight: 700;
+  background: linear-gradient(90deg, #ff6b9d, #fec46d);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: 2px;
+}
+.theme-banner-meta {
+  display: flex;
+  gap: 24px;
+  margin-top: 10px;
+  font-size: 12px;
+  color: #a0a0c0;
+}
+.theme-banner-meta strong { color: #4ecdc4; font-size: 15px; margin-right: 4px; }
+.theme-banner-heat { text-align: right; position: relative; z-index: 1; }
+.theme-banner-heat-num {
+  font-size: 32px;
+  font-weight: 700;
+  background: linear-gradient(90deg, #fec46d, #ff6b9d);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.theme-banner-heat-label { font-size: 11px; color: #888; margin-top: 2px; }
+
+.charts-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1.5fr;
+  gap: 14px;
+}
+.card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 12px;
+  padding: 16px;
+  transition: all 0.25s;
+}
+.card:hover {
+  border-color: rgba(78,205,196,0.2);
+  background: rgba(255,255,255,0.04);
+}
+.card-title {
+  font-size: 13px;
+  color: #c0c0d0;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+}
+.card-title::before {
+  content: '';
+  width: 3px; height: 14px;
+  background: linear-gradient(180deg, #4ecdc4, #ff6b9d);
+  border-radius: 1px;
+}
+.card-title .badge {
+  margin-left: auto;
+  font-size: 10px;
+  padding: 2px 6px;
+  background: rgba(78,205,196,0.15);
+  color: #4ecdc4;
+  border-radius: 3px;
+  font-weight: normal;
+}
+
+.pie-wrap { display: flex; flex-direction: column; align-items: center; gap: 24px; }
+.pie-svg { flex-shrink: 0; }
+.pie-legend {
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 10px;
+  font-size: 11px; padding: 0 4px;
+}
+.pie-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  background: rgba(255,255,255,0.04);
+  border-radius: 6px;
+  border: 1px solid rgba(255,255,255,0.06);
+}
+.pie-legend-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+.pie-legend-label { color: #c0c0d0; white-space: nowrap; }
+.pie-legend-value { color: #fec46d; font-weight: 600; }
+
+.map-card { position: relative; }
+.map-container {
+  width: 100%;
+  height: 500px;
+}
+
+.bottom-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.platform-list { display: flex; flex-direction: column; gap: 8px; }
+.platform-row {
+  display: grid;
+  grid-template-columns: 70px 1fr 70px;
+  gap: 10px;
+  align-items: center;
+  font-size: 12px;
+}
+.platform-row .pname { color: #c0c0d0; }
+.platform-row .bar-bg {
+  height: 10px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 5px;
+  overflow: hidden;
+}
+.platform-row .bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #4ecdc4, #fec46d, #ff6b9d);
+  border-radius: 5px;
+  transition: width 0.6s;
+  box-shadow: 0 0 8px rgba(78,205,196,0.4);
+}
+.platform-row .pval { color: #fec46d; text-align: right; font-size: 11px; font-weight: 600; }
+
+.playlet-list { display: flex; flex-direction: column; gap: 6px; }
+.playlet-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  background: rgba(255,255,255,0.02);
+  border-radius: 6px;
+  font-size: 12px;
+  border-left: 2px solid transparent;
+  transition: all 0.2s;
+}
+.playlet-row:hover {
+  background: rgba(78,205,196,0.05);
+  border-left-color: #4ecdc4;
+}
+.playlet-row .pname { color: #e8e8f0; flex: 1; }
+.playlet-row .pheat { color: #fec46d; font-weight: 600; }
+.playlet-row .rank {
+  width: 22px; height: 22px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.08);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 10px; color: #888;
+  margin-right: 8px;
+}
+.playlet-row:nth-child(1) .rank { background: #ffd700; color: #0a0e27; }
+.playlet-row:nth-child(2) .rank { background: #c0c0c0; color: #0a0e27; }
+.playlet-row:nth-child(3) .rank { background: #cd7f32; color: #0a0e27; }
+
+.note {
+  font-size: 11px;
+  color: #888;
+  margin-top: 10px;
+  padding: 8px 12px;
+  background: rgba(255,200,100,0.04);
+  border-left: 2px solid rgba(255,200,100,0.3);
+  border-radius: 3px;
+  line-height: 1.6;
+}
+.note strong { color: #fec46d; }
+
+.empty-state {
+  text-align: center;
+  padding: 40px 20px;
+  color: #555;
+  font-size: 12px;
+}
+
+.footer {
+  text-align: center;
+  padding: 20px;
+  color: #555;
+  font-size: 11px;
+  border-top: 1px solid rgba(255,255,255,0.05);
+  margin-top: 20px;
+}
+
+@media (max-width: 1100px) {
+  .charts-grid { grid-template-columns: 1fr 1fr; }
+  .map-card { grid-column: span 2; }
+}
+@media (max-width: 800px) {
+  .layout { grid-template-columns: 1fr; }
+  .sidebar { height: auto; position: static; max-height: 300px; }
+  .charts-grid { grid-template-columns: 1fr; }
+  .map-card { grid-column: span 1; }
+  .bottom-grid { grid-template-columns: 1fr; }
+}
+
+/* 五层分类标签样式 */
+.theme-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+.theme-tag { display: inline-flex; align-items: center; gap: 4px; padding: 3px 8px; border-radius: 4px; font-size: 12px; border: 1px solid; }
+.theme-tag-label { font-size: 10px; opacity: 0.7; padding: 1px 4px; border-radius: 3px; background: rgba(0,0,0,0.08); }
+.theme-tag-world { background: #e8f5e9; color: #2e7d32; border-color: #a5d6a7; }
+.theme-tag-genre { background: #e3f2fd; color: #1565c0; border-color: #90caf9; font-weight: 600; }
+.theme-tag-role { background: #fff3e0; color: #e65100; border-color: #ffcc80; }
+.theme-tag-plot { background: #f3e5f5; color: #7b1fa2; border-color: #ce93d8; }
+.theme-tag-mkt { background: #fce4ec; color: #c62828; border-color: #f48fb1; }
+.theme-item-tags { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 4px; }
+.theme-item-tag { font-size: 10px; padding: 1px 5px; border-radius: 3px; background: rgba(255,255,255,0.1); color: #aaa; }
+.theme-item-world { background: #e8f5e9; color: #2e7d32; }
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="brand">
+    <div class="brand-logo">🎬</div>
+    <div class="brand-text">
+      <h1>孚希题材榜</h1>
+      <div class="tagline">FUXI THEME RANK · 受众画像分析平台</div>
+    </div>
+  </div>
+  <div class="nav-menu">
+    <a href="#top" class="active" data-target="top">题材榜单</a>
+    <a href="#audience" data-target="audience">受众分析</a>
+    <a href="#city" data-target="city">城市分布</a>
+    <a href="#platform" data-target="platform">平台对比</a>
+  </div>
+  <div class="nav-stats">
+    <div class="nav-stat"><div class="nav-stat-num">20</div><div class="nav-stat-label">题材</div></div>
+    <div class="nav-stat"><div class="nav-stat-num">487</div><div class="nav-stat-label">剧目</div></div>
+    <div class="nav-stat"><div class="nav-stat-num">21</div><div class="nav-stat-label">榜单</div></div>
+    <div class="nav-stat"><div class="nav-stat-num">447</div><div class="nav-stat-label">受众</div></div>
+  </div>
+</nav>
+
+<div class="layout">
+  <aside class="sidebar">
+    <div class="sidebar-title">题材榜单 Top 20</div>
+    <div id="themeList"></div>
+  </aside>
+
+  <main class="main">
+    <div class="theme-banner">
+      <div class="theme-banner-info">
+        <div class="theme-banner-rank">排名 #<span id="curRank">1</span> / 20</div>
+        <div class="theme-banner-name" id="curName">现代</div>
+        <div class="theme-banner-meta" id="curMeta"></div>
+      </div>
+      <div class="theme-banner-heat">
+        <div class="theme-banner-heat-num" id="curHeat">18.86</div>
+        <div class="theme-banner-heat-label" id="curHeatLabel">亿综合热度</div>
+      </div>
+    </div>
+
+    <div class="charts-grid" id="audience">
+      <div class="card">
+        <div class="card-title">年龄段分布 <span class="badge">扇形图</span></div>
+        <div class="pie-wrap">
+          <svg class="pie-svg" viewBox="0 0 200 200" id="agePie"></svg>
+          <div class="pie-legend" id="ageLegend"></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">性别分布 <span class="badge">扇形图</span></div>
+        <div class="pie-wrap">
+          <svg class="pie-svg" viewBox="0 0 200 200" id="genderPie"></svg>
+          <div class="pie-legend" id="genderLegend"></div>
+        </div>
+      </div>
+
+      <div class="card map-card" id="city">
+        <div class="chart-title card-title">城市受众热力图 <span class="badge">标准中国地图</span></div>
+        <div class="map-container" id="chinaMapContainer"></div>
+        <div class="note">
+          <strong>说明:</strong> 地图数据来自 DataV.GeoAtlas 标准中国地图。气泡大小代表该城市受众占比，颜色按热度分级。城市分布基于 5 部剧的 32 省份受众数据，通过人口权重扩展为 50+ 城市分布。无受众数据的题材使用全局基线+题材标签推断。
+        </div>
+      </div>
+    </div>
+
+    <div class="bottom-grid" id="platform">
+      <div class="card">
+        <div class="card-title">平台播放量分布 <span class="badge" id="topPlatform">抖音</span></div>
+        <div class="platform-list" id="platformList"></div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">代表剧目 Top 5</div>
+        <div class="playlet-list" id="playletList"></div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<footer class="footer">
+  数据来源: DataEye 剧查查 · 21 个榜单聚合 + audienceAnalysis 真实受众画像接口<br>
+  地图数据: DataV.GeoAtlas 标准中国地图 · 生成时间: 2026-07-30
+</footer>
+
+<script>
+// 题材数据 — 从 fuxi-theme-rank.json 动态加载
+let themes = [];
+let cityGeo = {};
+
+// 加载数据
+async function loadData() {
+  try {
+    const resp = await fetch('data/fuxi-theme-rank.json');
+    const json = await resp.json();
+    
+    // 加载城市坐标
+    const coordResp = await fetch('data/city-coords.json');
+    if (coordResp.ok) {
+      cityGeo = await coordResp.json();
+    }
+    
+    // 转换数据格式
+    themes = json.themes.map((t, i) => {
+      const ad = t.audienceDistribution;
+      const age = (ad && ad.ageDistribution) ? ad.ageDistribution : { young: 0, middle: 0, old: 0 };
+      const gender = (ad && ad.genderDistribution) ? ad.genderDistribution : { male: 0, female: 0 };
+      const cities = (ad && ad.cityDistribution) ? ad.cityDistribution.map(c => [c.name, c.percentage]) : [];
+      const platforms = t.platformDistribution ? t.platformDistribution.map(p => [p.platform, p.avgValue / 1e8]) : [];
+      const topPlatform = t.topPlatform || (platforms.length > 0 ? platforms[0][0] : '');
+      const playlets = t.topPlaylets ? t.topPlaylets.map(p => [p.name || '未知', p.hotValue / 1e8]) : [];
+      
+      return {
+        pos: i + 1,
+        name: t.theme,
+        count: t.playletCount,
+        heat: t.totalHotValue / 1e8,
+        age: { y: age.young || 0, m: age.middle || 0, o: age.old || 0 },
+        gender: { m: gender.male || 0, f: gender.female || 0 },
+        cities: cities,
+        platforms: platforms,
+        platform: topPlatform,
+        playlets: playlets,
+        world: t.world || '',
+        genre: t.genre || t.theme || '',
+        roles: t.roles || [],
+        plots: t.plots || [],
+        marketing: t.marketing || []
+      };
+    });
+    
+    console.log('Loaded ' + themes.length + ' themes, ' + Object.keys(cityGeo).length + ' cities');
+    currentTheme = themes[0];
+    renderAll();
+  } catch (err) {
+    console.error('Failed to load data:', err);
+    // 回退到硬编码数据
+    loadFallbackData();
+  }
+}
+
+function loadFallbackData() {
+  // 最小回退数据
+  themes = [{pos:1,name:"加载中...",count:0,heat:0,age:{y:0,m:0,o:0},gender:{m:0,f:0},cities:[],platforms:[],platform:"",playlets:[],world:"",genre:"",roles:[],plots:[],marketing:[]}];
+  cityGeo = {};
+  currentTheme = themes[0];
+  renderAll();
+}
+
+const platformNames = {douyin:"抖音",hongguo:"红果",kuaishou:"快手",tencent:"腾讯",iqiyi:"爱奇艺",youku:"优酷",wechat:"微信",pdd:"拼多多"};
+
+let currentTheme = null;
+let chinaMapLoaded = false;
+let chinaGeoJSON = null;
+
+// 初始化：加载数据
+loadData();
+
+// 加载中国地图 GeoJSON
+async function loadChinaMap() {
+  if (chinaGeoJSON) return chinaGeoJSON;
+  try {
+    const resp = await fetch('https://geo.datav.aliyun.com/areas_v3/bound/100000_full.json');
+    chinaGeoJSON = await resp.json();
+    chinaMapLoaded = true;
+    return chinaGeoJSON;
+  } catch (err) {
+    console.error('加载中国地图失败:', err);
+    return null;
+  }
+}
+
+function renderList() {
+  const list = document.getElementById('themeList');
+  list.innerHTML = themes.map(t => `
+    <div class="theme-item ${t.pos === currentTheme.pos ? 'active' : ''}" data-pos="${t.pos}">
+      <div class="pos">${t.pos}</div>
+      <div style="flex:1;min-width:0">
+        <div class="name">${t.name}</div>
+        <div class="theme-item-tags">
+          ${t.world ? '<span class="theme-item-tag theme-item-world">' + t.world + '</span>' : ''}
+          ${t.roles.slice(0,2).map(x => '<span class="theme-item-tag">' + x + '</span>').join('')}
+          ${t.plots.slice(0,2).map(x => '<span class="theme-item-tag">' + x + '</span>').join('')}
+        </div>
+      </div>
+      <div class="heat">${formatHeat(t.heat)}</div>
+    </div>
+  `).join('');
+  list.querySelectorAll('.theme-item').forEach(el => {
+    el.addEventListener('click', () => {
+      currentTheme = themes.find(t => t.pos == el.dataset.pos);
+      renderAll();
+    });
+  });
+}
+
+function renderPie(svgId, legendId, data, colors, labels) {
+  const svg = document.getElementById(svgId);
+  const total = data.reduce((s, v) => s + v, 0);
+  if (total === 0) {
+    svg.innerHTML = '<text x="100" y="100" text-anchor="middle" fill="#555" font-size="11">无数据</text>';
+    document.getElementById(legendId).innerHTML = '<div class="empty-state" style="padding:20px 8px">该题材暂无受众画像</div>';
+    return;
+  }
+  let cumAngle = -90;
+  let paths = '';
+  let legendHtml = '';
+  data.forEach((v, i) => {
+    const pct = v / total;
+    const angle = pct * 360;
+    const startAngle = cumAngle;
+    const endAngle = cumAngle + angle;
+    const r = 80, cx = 100, cy = 100;
+    const startRad = startAngle * Math.PI / 180;
+    const endRad = endAngle * Math.PI / 180;
+    const x1 = cx + r * Math.cos(startRad);
+    const y1 = cy + r * Math.sin(startRad);
+    const x2 = cx + r * Math.cos(endRad);
+    const y2 = cy + r * Math.sin(endRad);
+    const largeArc = angle > 180 ? 1 : 0;
+    paths += `<path d="M${cx},${cy} L${x1},${y1} A${r},${r} 0 ${largeArc},1 ${x2},${y2} Z" fill="${colors[i]}" stroke="rgba(10,14,39,0.8)" stroke-width="2"/>`;
+    const midAngle = (startAngle + endAngle) / 2;
+    const midRad = midAngle * Math.PI / 180;
+    const labelR = r * 0.65;
+    const lx = cx + labelR * Math.cos(midRad);
+    const ly = cy + labelR * Math.sin(midRad);
+    if (pct > 0.06) {
+      paths += `<text x="${lx}" y="${ly}" text-anchor="middle" dominant-baseline="middle" fill="#fff" font-size="13" font-weight="700">${(pct*100).toFixed(1)}%</text>`;
+    }
+    cumAngle = endAngle;
+    legendHtml += `<div class="pie-legend-item">
+      <span class="pie-legend-dot" style="background:${colors[i]}"></span>
+      <span class="pie-legend-label">${labels[i]}</span>
+      <span class="pie-legend-value">${(pct*100).toFixed(1)}%</span>
+    </div>`;
+  });
+  paths += `<circle cx="100" cy="100" r="34" fill="rgba(10,14,39,0.95)" stroke="rgba(78,205,196,0.4)" stroke-width="1.5"/>`;
+  paths += `<text x="100" y="97" text-anchor="middle" fill="#4ecdc4" font-size="10">覆盖率</text>`;
+  paths += `<text x="100" y="114" text-anchor="middle" fill="#fec46d" font-size="14" font-weight="700">${total.toFixed(1)}%</text>`;
+  svg.innerHTML = paths;
+  document.getElementById(legendId).innerHTML = legendHtml;
+}
+
+async function renderMap() {
+  const container = document.getElementById('chinaMapContainer');
+  const geo = await loadChinaMap();
+  if (!geo) {
+    container.innerHTML = '<div class="empty-state">地图加载失败，请检查网络连接</div>';
+    return;
+  }
+
+  // 销毁旧实例
+  const existing = echarts.getInstanceByDom(container);
+  if (existing) existing.dispose();
+
+  const chart = echarts.init(container, null, { renderer: 'svg' });
+
+  // 注册地图
+  echarts.registerMap('china', geo);
+
+  // 城市气泡数据
+  const cities = currentTheme.cities;
+  const scatterData = [];
+  const maxPct = cities.length > 0 ? Math.max(...cities.map(c => c[1])) : 1;
+
+  cities.forEach(([city, pct]) => {
+    const geo = cityGeo[city];
+    if (!geo) return;
+    const intensity = pct / maxPct;
+    let color;
+    if (intensity > 0.75) color = '#ff6b9d';
+    else if (intensity > 0.45) color = '#fec46d';
+    else color = '#4ecdc4';
+    scatterData.push({
+      name: city,
+      value: [...geo, pct, city],
+      symbolSize: Math.max(8, pct / maxPct * 36),
+      itemStyle: { color: color, shadowBlur: 12, shadowColor: color }
+    });
+  });
+
+  const option = {
+    backgroundColor: 'transparent',
+    tooltip: {
+      trigger: 'item',
+      backgroundColor: 'rgba(0,0,0,0.85)',
+      borderColor: 'rgba(78,205,196,0.5)',
+      textStyle: { color: '#fff', fontSize: 12 },
+      formatter: function(params) {
+        if (params.seriesType === 'scatter') {
+          return `<strong style="color:#4ecdc4">${params.name}</strong><br/>受众占比: <strong style="color:#fec46d">${params.value[2]}%</strong>`;
+        }
+        return params.name;
+      }
+    },
+    geo: {
+      map: 'china',
+      roam: true,
+      zoom: 1.2,
+      center: [104.5, 36],
+      aspectScale: 0.85,
+      label: { show: false },
+      itemStyle: {
+        areaColor: 'rgba(78,205,196,0.06)',
+        borderColor: 'rgba(78,205,196,0.5)',
+        borderWidth: 1,
+        shadowColor: 'rgba(78,205,196,0.2)',
+        shadowBlur: 8
+      },
+      emphasis: {
+        label: { show: true, color: '#4ecdc4', fontSize: 12 },
+        itemStyle: { areaColor: 'rgba(78,205,196,0.15)' }
+      },
+      regions: [
+        // 南海诸岛
+        {
+          name: '南海诸岛',
+          itemStyle: { areaColor: 'rgba(78,205,196,0.06)', borderColor: 'rgba(78,205,196,0.5)' }
+        }
+      ]
+    },
+    series: [{
+      type: 'scatter',
+      coordinateSystem: 'geo',
+      data: scatterData,
+      encode: { value: 2 },
+      label: {
+        show: true,
+        formatter: function(p) { return p.name; },
+        position: 'bottom',
+        distance: 8,
+        color: '#fff',
+        fontSize: 12,
+        fontWeight: 'bold',
+        textShadowColor: 'rgba(0,0,0,0.8)',
+        textShadowBlur: 4
+      },
+      emphasis: {
+        scale: 1.5,
+        label: { fontSize: 14 }
+      }
+    }]
+  };
+
+  chart.setOption(option);
+
+  // 窗口调整
+  window.addEventListener('resize', () => chart.resize());
+}
+
+function formatHeat(val) {
+  if (val >= 1) return val.toFixed(2) + '亿';
+  return (val * 10000).toFixed(0) + '万';
+}
+
+function renderPlatforms() {
+  const platforms = currentTheme.platforms;
+  const maxVal = Math.max(...platforms.map(p => p[1]));
+  const html = platforms.map(([plat, val]) => {
+    const pct = val / maxVal * 100;
+    return `<div class="platform-row">
+      <div class="pname">${platformNames[plat] || plat}</div>
+      <div class="bar-bg"><div class="bar-fill" style="width:${pct}%"></div></div>
+      <div class="pval">${formatHeat(val)}</div>
+    </div>`;
+  }).join('');
+  document.getElementById('platformList').innerHTML = html || '<div class="empty-state">无平台数据</div>';
+  document.getElementById('topPlatform').textContent = platformNames[currentTheme.platform] || currentTheme.platform;
+}
+
+function renderPlaylets() {
+  const playlets = currentTheme.playlets;
+  const html = playlets.map(([name, heat], i) => `
+    <div class="playlet-row">
+      <div style="display:flex;align-items:center;flex:1">
+        <div class="rank">${i+1}</div>
+        <div class="pname">${name}</div>
+      </div>
+      <div class="pheat">${formatHeat(heat)}</div>
+    </div>
+  `).join('');
+  document.getElementById('playletList').innerHTML = html || '<div class="empty-state">无代表剧目</div>';
+}
+
+function renderAll() {
+  document.getElementById('curRank').textContent = currentTheme.pos;
+  document.getElementById('curName').textContent = currentTheme.name;
+  const h = currentTheme.heat;
+  document.getElementById('curHeat').textContent = h >= 1 ? h.toFixed(2) : (h * 10000).toFixed(0);
+  document.getElementById('curHeatLabel').textContent = h >= 1 ? '亿综合热度' : '万综合热度';
+  document.getElementById('curMeta').innerHTML = `
+    <span><strong>${currentTheme.count}</strong>部剧目</span>
+    <span>Top平台 <strong>${platformNames[currentTheme.platform] || currentTheme.platform}</strong></span>
+    <span>城市数 <strong>${currentTheme.cities.length}</strong></span>
+  `;
+  const tagHtml = [];
+  if (currentTheme.world) {
+    tagHtml.push('<span class="theme-tag theme-tag-world"><span class="theme-tag-label">时代</span>' + currentTheme.world + '</span>');
+  }
+  if (currentTheme.genre) {
+    tagHtml.push('<span class="theme-tag theme-tag-genre"><span class="theme-tag-label">题材</span>' + currentTheme.genre + '</span>');
+  }
+  if (currentTheme.roles && currentTheme.roles.length) {
+    tagHtml.push(currentTheme.roles.map(x => '<span class="theme-tag theme-tag-role"><span class="theme-tag-label">人设</span>' + x + '</span>').join(''));
+  }
+  if (currentTheme.plots && currentTheme.plots.length) {
+    tagHtml.push(currentTheme.plots.map(x => '<span class="theme-tag theme-tag-plot"><span class="theme-tag-label">剧情</span>' + x + '</span>').join(''));
+  }
+  if (currentTheme.marketing && currentTheme.marketing.length) {
+    tagHtml.push(currentTheme.marketing.map(x => '<span class="theme-tag theme-tag-mkt"><span class="theme-tag-label">卖点</span>' + x + '</span>').join(''));
+  }
+  const existingBanner = document.querySelector('.theme-banner-info');
+  let tagContainer = document.getElementById('themeTags');
+  if (!tagContainer) {
+    tagContainer = document.createElement('div');
+    tagContainer.id = 'themeTags';
+    tagContainer.className = 'theme-tags';
+    existingBanner.appendChild(tagContainer);
+  }
+  tagContainer.innerHTML = tagHtml.join('');
+  renderList();
+  renderPie('agePie', 'ageLegend',
+    [currentTheme.age.y, currentTheme.age.m, currentTheme.age.o],
+    ['#4ecdc4', '#ffb347', '#ff6b9d'],
+    ['青年 (18-30)', '中年 (31-50)', '老年 (51+)']);
+  renderPie('genderPie', 'genderLegend',
+    [currentTheme.gender.m, currentTheme.gender.f],
+    ['#5b9eff', '#ff6b9d'],
+    ['男性', '女性']);
+  renderMap();
+  renderPlatforms();
+  renderPlaylets();
+}
+
+// 导航平滑滚动
+document.querySelectorAll('.nav-menu a').forEach(link => {
+  link.addEventListener('click', function(e) {
+    e.preventDefault();
+    const target = this.dataset.target;
+    const el = document.getElementById(target);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    document.querySelectorAll('.nav-menu a').forEach(a => a.classList.remove('active'));
+    this.classList.add('active');
+  });
+});
+</script>
+</body>
+</html>
