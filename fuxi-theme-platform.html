@@ -356,6 +356,18 @@ body {
 .theme-item-tags { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 4px; }
 .theme-item-tag { font-size: 10px; padding: 1px 5px; border-radius: 3px; background: rgba(255,255,255,0.1); color: #aaa; }
 .theme-item-world { background: #e8f5e9; color: #2e7d32; }
+
+/* 扇形图果冻动画 */
+@keyframes jelly {
+  0%   { transform: scale(1); }
+  25%  { transform: scale(1.06); }
+  50%  { transform: scale(0.97); }
+  75%  { transform: scale(1.03); }
+  100% { transform: scale(1); }
+}
+.pie-slice { cursor: pointer; transform-origin: 100px 100px; transition: filter 0.2s; }
+.pie-slice:hover { filter: brightness(1.2); }
+.pie-slice.jelly-active { animation: jelly 0.55s cubic-bezier(0.34, 1.56, 0.64, 1); }
 </style>
 </head>
 <body>
@@ -581,7 +593,7 @@ function renderPie(svgId, legendId, data, colors, labels) {
     const x2 = cx + r * Math.cos(endRad);
     const y2 = cy + r * Math.sin(endRad);
     const largeArc = angle > 180 ? 1 : 0;
-    paths += `<path d="M${cx},${cy} L${x1},${y1} A${r},${r} 0 ${largeArc},1 ${x2},${y2} Z" fill="${colors[i]}" stroke="rgba(10,14,39,0.8)" stroke-width="2"/>`;
+    paths += `<path class="pie-slice" data-index="${i}" d="M${cx},${cy} L${x1},${y1} A${r},${r} 0 ${largeArc},1 ${x2},${y2} Z" fill="${colors[i]}" stroke="rgba(10,14,39,0.8)" stroke-width="2"/>`;
     const midAngle = (startAngle + endAngle) / 2;
     const midRad = midAngle * Math.PI / 180;
     const labelR = r * 0.65;
@@ -602,6 +614,15 @@ function renderPie(svgId, legendId, data, colors, labels) {
   paths += `<text x="100" y="114" text-anchor="middle" fill="#fec46d" font-size="14" font-weight="700">${total.toFixed(1)}%</text>`;
   svg.innerHTML = paths;
   document.getElementById(legendId).innerHTML = legendHtml;
+  // 扇形图点击果冻动画
+  svg.querySelectorAll('.pie-slice').forEach(slice => {
+    slice.addEventListener('click', function(e) {
+      e.stopPropagation();
+      this.classList.remove('jelly-active');
+      void this.offsetWidth; // reflow 触发，确保动画重播
+      this.classList.add('jelly-active');
+    });
+  });
 }
 
 async function renderMap() {
