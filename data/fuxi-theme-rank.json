@@ -1,8 +1,8 @@
 {
   "export": {
     "name": "孚希题材榜",
-    "generatedAt": "2026-08-03T06:19:15.264Z",
-    "generatedAtMs": 1785737955264,
+    "generatedAt": "2026-08-03T06:54:08.698Z",
+    "generatedAtMs": 1785740048698,
     "source": "DataEye 剧目榜单聚合（21 个榜单）+ audienceAnalysis 真实受众画像（4 部剧）",
     "methodology": "按题材标签聚合剧目数据。受众分布来自 audienceAnalysis 接口的真实用户画像（年龄/性别/省份/城市），按剧在榜单中的出现次数加权合并。省份分布通过人口权重扩展为城市分布（50+城市）。无受众数据的题材使用全局基线+题材标签推断。平台播放量从各榜单收集。",
     "fieldSchema": {
@@ -31,10 +31,10 @@
     "stats": {
       "scannedFiles": 21,
       "scannedRows": 588,
-      "uniquePlaylets": 485,
-      "playletsWithoutTheme": 265,
+      "uniquePlaylets": 484,
+      "playletsWithoutTheme": 264,
       "playletsWithAudience": 4,
-      "totalThemes": 108,
+      "totalThemes": 106,
       "rankedThemes": 20,
       "topThemesLimit": 20
     }
@@ -44,9 +44,9 @@
       "position": 1,
       "theme": "都市日常",
       "playletCount": 101,
-      "appearances": 124,
-      "totalHotValue": 1190113134,
-      "avgHotValue": 11783298,
+      "appearances": 122,
+      "totalHotValue": 1190792723,
+      "avgHotValue": 11790027,
       "audienceDistribution": {
         "ageDistribution": {
           "young": 17.01,
@@ -324,8 +324,8 @@
       },
       "tagAudienceDistribution": {
         "male": 27,
-        "female": 32,
-        "mixed": 3,
+        "female": 33,
+        "mixed": 2,
         "unknown": 39
       },
       "regionDistribution": {
@@ -336,8 +336,8 @@
       "platformDistribution": [
         {
           "platform": "douyin",
-          "totalValue": 1126530000,
-          "avgValue": 281632500,
+          "totalValue": 1127210000,
+          "avgValue": 281802500,
           "maxValue": 800000000,
           "playletCount": 4,
           "coverage": 4
@@ -352,9 +352,9 @@
         },
         {
           "platform": "tencent",
-          "totalValue": 44224,
-          "avgValue": 7371,
-          "maxValue": 9008,
+          "totalValue": 43812,
+          "avgValue": 7302,
+          "maxValue": 8759,
           "playletCount": 6,
           "coverage": 5.9
         },
@@ -368,9 +368,9 @@
         },
         {
           "platform": "iqiyi",
-          "totalValue": 3531,
+          "totalValue": 3532,
           "avgValue": 1766,
-          "maxValue": 2036,
+          "maxValue": 2040,
           "playletCount": 2,
           "coverage": 2
         },
@@ -442,7 +442,7 @@
         {
           "name": "五一假期的不速之客",
           "playletId": 4524383,
-          "hotValue": 66530000,
+          "hotValue": 67210000,
           "appearances": 4,
           "audience": null,
           "platforms": [
@@ -469,10 +469,10 @@
     {
       "position": 2,
       "theme": "现代",
-      "playletCount": 101,
+      "playletCount": 103,
       "appearances": 124,
-      "totalHotValue": 1143376026,
-      "avgHotValue": 11320555,
+      "totalHotValue": 1145389253,
+      "avgHotValue": 11120284,
       "audienceDistribution": {
         "ageDistribution": {
           "young": 16.41,
@@ -750,14 +750,14 @@
       },
       "tagAudienceDistribution": {
         "male": 28,
-        "female": 32,
-        "mixed": 3,
-        "unknown": 38
+        "female": 33,
+        "mixed": 2,
+        "unknown": 40
       },
       "regionDistribution": {
-        "domestic": 4,
+        "domestic": 5,
         "overseas": 1,
-        "unknown": 96
+        "unknown": 97
       },
       "platformDistribution": [
         {
@@ -766,23 +766,23 @@
           "avgValue": 353333333,
           "maxValue": 800000000,
           "playletCount": 3,
-          "coverage": 3
+          "coverage": 2.9
         },
         {
           "platform": "hongguo",
-          "totalValue": 83316000,
-          "avgValue": 4165800,
+          "totalValue": 85328000,
+          "avgValue": 4063238,
           "maxValue": 23317000,
-          "playletCount": 20,
-          "coverage": 19.8
+          "playletCount": 21,
+          "coverage": 20.4
         },
         {
           "platform": "tencent",
-          "totalValue": 50066,
-          "avgValue": 7152,
-          "maxValue": 9008,
+          "totalValue": 49931,
+          "avgValue": 7133,
+          "maxValue": 8759,
           "playletCount": 7,
-          "coverage": 6.9
+          "coverage": 6.8
         },
         {
           "platform": "wechat",
@@ -790,15 +790,15 @@
           "avgValue": 268,
           "maxValue": 1124,
           "playletCount": 21,
-          "coverage": 20.8
+          "coverage": 20.4
         },
         {
           "platform": "iqiyi",
-          "totalValue": 3531,
-          "avgValue": 1766,
-          "maxValue": 2036,
-          "playletCount": 2,
-          "coverage": 2
+          "totalValue": 4893,
+          "avgValue": 1631,
+          "maxValue": 2040,
+          "playletCount": 3,
+          "coverage": 2.9
         },
         {
           "platform": "youku",
@@ -806,7 +806,7 @@
           "avgValue": 100,
           "maxValue": 100,
           "playletCount": 8,
-          "coverage": 7.9
+          "coverage": 7.8
         }
       ],
       "topPlatform": "douyin",
@@ -896,8 +896,8 @@
       "theme": "大女主",
       "playletCount": 24,
       "appearances": 28,
-      "totalHotValue": 968593135,
-      "avgHotValue": 40358047,
+      "totalHotValue": 968593596,
+      "avgHotValue": 40358067,
       "audienceDistribution": {
         "ageDistribution": {
           "young": 15.43,
@@ -1203,9 +1203,9 @@
         },
         {
           "platform": "tencent",
-          "totalValue": 25891,
-          "avgValue": 8630,
-          "maxValue": 13869,
+          "totalValue": 26355,
+          "avgValue": 8785,
+          "maxValue": 14035,
           "playletCount": 3,
           "coverage": 12.5
         },
@@ -1219,9 +1219,9 @@
         },
         {
           "platform": "iqiyi",
-          "totalValue": 1495,
-          "avgValue": 1495,
-          "maxValue": 1495,
+          "totalValue": 1492,
+          "avgValue": 1492,
+          "maxValue": 1492,
           "playletCount": 1,
           "coverage": 4.2
         },
@@ -1313,9 +1313,9 @@
       "position": 4,
       "theme": "总裁",
       "playletCount": 45,
-      "appearances": 54,
-      "totalHotValue": 302606061,
-      "avgHotValue": 6724579,
+      "appearances": 53,
+      "totalHotValue": 304618221,
+      "avgHotValue": 6769294,
       "audienceDistribution": {
         "ageDistribution": {
           "young": 17.01,
@@ -1593,8 +1593,8 @@
       },
       "tagAudienceDistribution": {
         "male": 16,
-        "female": 20,
-        "mixed": 3,
+        "female": 21,
+        "mixed": 2,
         "unknown": 6
       },
       "regionDistribution": {
@@ -1613,17 +1613,17 @@
         },
         {
           "platform": "hongguo",
-          "totalValue": 42593000,
-          "avgValue": 4732556,
+          "totalValue": 44605000,
+          "avgValue": 4460500,
           "maxValue": 23317000,
-          "playletCount": 9,
-          "coverage": 20
+          "playletCount": 10,
+          "coverage": 22.2
         },
         {
           "platform": "tencent",
-          "totalValue": 5743,
-          "avgValue": 5743,
-          "maxValue": 5743,
+          "totalValue": 5899,
+          "avgValue": 5899,
+          "maxValue": 5899,
           "playletCount": 1,
           "coverage": 2.2
         },
@@ -1637,9 +1637,9 @@
         },
         {
           "platform": "iqiyi",
-          "totalValue": 2036,
-          "avgValue": 2036,
-          "maxValue": 2036,
+          "totalValue": 2040,
+          "avgValue": 2040,
+          "maxValue": 2040,
           "playletCount": 1,
           "coverage": 2.2
         },
@@ -1664,10 +1664,6 @@
         },
         {
           "name": "潮汐",
-          "count": 1
-        },
-        {
-          "name": "点众",
           "count": 1
         }
       ],
@@ -1735,8 +1731,8 @@
       "theme": "女频",
       "playletCount": 48,
       "appearances": 61,
-      "totalHotValue": 236530110,
-      "avgHotValue": 4927711,
+      "totalHotValue": 239222736,
+      "avgHotValue": 4983807,
       "audienceDistribution": {
         "ageDistribution": {
           "young": 17.56,
@@ -2014,8 +2010,8 @@
       },
       "tagAudienceDistribution": {
         "male": 0,
-        "female": 46,
-        "mixed": 2,
+        "female": 47,
+        "mixed": 1,
         "unknown": 0
       },
       "regionDistribution": {
@@ -2026,33 +2022,33 @@
       "platformDistribution": [
         {
           "platform": "douyin",
-          "totalValue": 186530000,
-          "avgValue": 93265000,
+          "totalValue": 187210000,
+          "avgValue": 93605000,
           "maxValue": 120000000,
           "playletCount": 2,
           "coverage": 4.2
         },
         {
           "platform": "hongguo",
-          "totalValue": 49952000,
-          "avgValue": 4162667,
+          "totalValue": 51964000,
+          "avgValue": 3997231,
           "maxValue": 23317000,
-          "playletCount": 12,
-          "coverage": 25
+          "playletCount": 13,
+          "coverage": 27.1
         },
         {
           "platform": "tencent",
-          "totalValue": 40791,
-          "avgValue": 8158,
-          "maxValue": 13869,
+          "totalValue": 41416,
+          "avgValue": 8283,
+          "maxValue": 14035,
           "playletCount": 5,
           "coverage": 10.4
         },
         {
           "platform": "iqiyi",
-          "totalValue": 3531,
+          "totalValue": 3532,
           "avgValue": 1766,
-          "maxValue": 2036,
+          "maxValue": 2040,
           "playletCount": 2,
           "coverage": 4.2
         },
@@ -2082,10 +2078,6 @@
         {
           "name": "潮汐",
           "count": 1
-        },
-        {
-          "name": "点众",
-          "count": 1
         }
       ],
       "topPlaylets": [
@@ -2103,7 +2095,7 @@
         {
           "name": "五一假期的不速之客",
           "playletId": 4524383,
-          "hotValue": 66530000,
+          "hotValue": 67210000,
           "appearances": 4,
           "audience": null,
           "platforms": [
@@ -2156,7 +2148,7 @@
       "position": 6,
       "theme": "男频",
       "playletCount": 40,
-      "appearances": 49,
+      "appearances": 48,
       "totalHotValue": 161114566,
       "avgHotValue": 4027864,
       "audienceDistribution": {
@@ -3486,8 +3478,8 @@
       "theme": "剧情",
       "playletCount": 47,
       "appearances": 60,
-      "totalHotValue": 68542737,
-      "avgHotValue": 1458356,
+      "totalHotValue": 69222737,
+      "avgHotValue": 1472824,
       "audienceDistribution": {
         "ageDistribution": {
           "young": 18.11,
@@ -4701,9 +4693,9 @@
       },
       "tagAudienceDistribution": {
         "male": 5,
-        "female": 4,
+        "female": 5,
         "mixed": 0,
-        "unknown": 38
+        "unknown": 37
       },
       "regionDistribution": {
         "domestic": 1,
@@ -4713,9 +4705,9 @@
       "platformDistribution": [
         {
           "platform": "douyin",
-          "totalValue": 66530000,
-          "avgValue": 66530000,
-          "maxValue": 66530000,
+          "totalValue": 67210000,
+          "avgValue": 67210000,
+          "maxValue": 67210000,
           "playletCount": 1,
           "coverage": 2.1
         },
@@ -4763,7 +4755,7 @@
         {
           "name": "五一假期的不速之客",
           "playletId": 4524383,
-          "hotValue": 66530000,
+          "hotValue": 67210000,
           "appearances": 4,
           "audience": null,
           "platforms": [
@@ -4811,10 +4803,10 @@
     {
       "position": 8,
       "theme": "打脸虐渣",
-      "playletCount": 32,
-      "appearances": 34,
-      "totalHotValue": 35704373,
-      "avgHotValue": 1115762,
+      "playletCount": 31,
+      "appearances": 33,
+      "totalHotValue": 35704980,
+      "avgHotValue": 1151774,
       "audienceDistribution": {
         "ageDistribution": {
           "young": 15.06,
@@ -5093,13 +5085,13 @@
       "tagAudienceDistribution": {
         "male": 8,
         "female": 21,
-        "mixed": 2,
+        "mixed": 1,
         "unknown": 1
       },
       "regionDistribution": {
         "domestic": 0,
         "overseas": 1,
-        "unknown": 31
+        "unknown": 30
       },
       "platformDistribution": [
         {
@@ -5108,15 +5100,15 @@
           "avgValue": 17827500,
           "maxValue": 23317000,
           "playletCount": 2,
-          "coverage": 6.3
+          "coverage": 6.5
         },
         {
           "platform": "tencent",
-          "totalValue": 43098,
-          "avgValue": 8620,
-          "maxValue": 13869,
+          "totalValue": 43708,
+          "avgValue": 8742,
+          "maxValue": 14035,
           "playletCount": 5,
-          "coverage": 15.6
+          "coverage": 16.1
         },
         {
           "platform": "wechat",
@@ -5124,15 +5116,15 @@
           "avgValue": 231,
           "maxValue": 1124,
           "playletCount": 19,
-          "coverage": 59.4
+          "coverage": 61.3
         },
         {
           "platform": "iqiyi",
-          "totalValue": 1495,
-          "avgValue": 1495,
-          "maxValue": 1495,
+          "totalValue": 1492,
+          "avgValue": 1492,
+          "maxValue": 1492,
           "playletCount": 1,
-          "coverage": 3.1
+          "coverage": 3.2
         },
         {
           "platform": "youku",
@@ -5140,17 +5132,13 @@
           "avgValue": 100,
           "maxValue": 100,
           "playletCount": 4,
-          "coverage": 12.5
+          "coverage": 12.9
         }
       ],
       "topPlatform": "hongguo",
       "topPublishers": [
         {
           "name": "掌文",
-          "count": 1
-        },
-        {
-          "name": "点众",
           "count": 1
         }
       ],
@@ -5183,7 +5171,7 @@
         {
           "name": "凤池生春",
           "playletId": 660249,
-          "hotValue": 13869,
+          "hotValue": 14035,
           "appearances": 1,
           "audience": [
             "31-40",
@@ -5198,7 +5186,7 @@
         {
           "name": "逍遥四公子",
           "playletId": 1123062,
-          "hotValue": 9130,
+          "hotValue": 9133,
           "appearances": 1,
           "platforms": [
             "tencent"
@@ -5207,7 +5195,7 @@
         {
           "name": "皇后驾到",
           "playletId": 769177,
-          "hotValue": 8077,
+          "hotValue": 8220,
           "appearances": 1,
           "platforms": [
             "tencent"
@@ -5220,8 +5208,8 @@
       "theme": "女性成长",
       "playletCount": 18,
       "appearances": 20,
-      "totalHotValue": 35647922,
-      "avgHotValue": 1980440,
+      "totalHotValue": 35648383,
+      "avgHotValue": 1980466,
       "audienceDistribution": {
         "ageDistribution": {
           "young": 15.43,
@@ -5519,9 +5507,9 @@
         },
         {
           "platform": "tencent",
-          "totalValue": 25891,
-          "avgValue": 8630,
-          "maxValue": 13869,
+          "totalValue": 26355,
+          "avgValue": 8785,
+          "maxValue": 14035,
           "playletCount": 3,
           "coverage": 16.7
         },
@@ -5535,9 +5523,9 @@
         },
         {
           "platform": "iqiyi",
-          "totalValue": 1495,
-          "avgValue": 1495,
-          "maxValue": 1495,
+          "totalValue": 1492,
+          "avgValue": 1492,
+          "maxValue": 1492,
           "playletCount": 1,
           "coverage": 5.6
         }
@@ -5619,8 +5607,8 @@
       "theme": "逆袭",
       "playletCount": 78,
       "appearances": 95,
-      "totalHotValue": 25382749,
-      "avgHotValue": 325420,
+      "totalHotValue": 25383142,
+      "avgHotValue": 325425,
       "audienceDistribution": {
         "ageDistribution": {
           "young": 15.06,
@@ -5898,8 +5886,8 @@
       },
       "tagAudienceDistribution": {
         "male": 26,
-        "female": 12,
-        "mixed": 2,
+        "female": 13,
+        "mixed": 1,
         "unknown": 38
       },
       "regionDistribution": {
@@ -5918,9 +5906,9 @@
         },
         {
           "platform": "tencent",
-          "totalValue": 48311,
-          "avgValue": 9662,
-          "maxValue": 13869,
+          "totalValue": 48707,
+          "avgValue": 9741,
+          "maxValue": 14035,
           "playletCount": 5,
           "coverage": 6.4
         },
@@ -5934,9 +5922,9 @@
         },
         {
           "platform": "iqiyi",
-          "totalValue": 1495,
-          "avgValue": 1495,
-          "maxValue": 1495,
+          "totalValue": 1492,
+          "avgValue": 1492,
+          "maxValue": 1492,
           "playletCount": 1,
           "coverage": 1.3
         },
@@ -5961,10 +5949,6 @@
         },
         {
           "name": "掌文",
-          "count": 1
-        },
-        {
-          "name": "点众",
           "count": 1
         }
       ],
@@ -5996,7 +5980,7 @@
         {
           "name": "凤池生春",
           "playletId": 660249,
-          "hotValue": 13869,
+          "hotValue": 14035,
           "appearances": 1,
           "audience": [
             "31-40",
@@ -6011,7 +5995,7 @@
         {
           "name": "少侠逆袭攻略",
           "playletId": 4094002,
-          "hotValue": 13079,
+          "hotValue": 13292,
           "appearances": 1,
           "platforms": [
             "tencent"
@@ -6020,7 +6004,7 @@
         {
           "name": "逍遥四公子",
           "playletId": 1123062,
-          "hotValue": 9130,
+          "hotValue": 9133,
           "appearances": 1,
           "platforms": [
             "tencent"
@@ -6033,7 +6017,7 @@
       "theme": "乡村",
       "playletCount": 29,
       "appearances": 34,
-      "totalHotValue": 19540094,
+      "totalHotValue": 19540070,
       "avgHotValue": 673796,
       "audienceDistribution": {
         "ageDistribution": {
@@ -6332,9 +6316,9 @@
         },
         {
           "platform": "iqiyi",
-          "totalValue": 2731,
-          "avgValue": 2731,
-          "maxValue": 2731,
+          "totalValue": 2707,
+          "avgValue": 2707,
+          "maxValue": 2707,
           "playletCount": 1,
           "coverage": 3.4
         },
@@ -6382,7 +6366,7 @@
         {
           "name": "最后一个道士",
           "playletId": 22413,
-          "hotValue": 2731,
+          "hotValue": 2707,
           "appearances": 1,
           "platforms": [
             "iqiyi"
@@ -6411,10 +6395,10 @@
     {
       "position": 12,
       "theme": "家庭伦理",
-      "playletCount": 25,
-      "appearances": 30,
-      "totalHotValue": 18727443,
-      "avgHotValue": 749098,
+      "playletCount": 24,
+      "appearances": 29,
+      "totalHotValue": 18727440,
+      "avgHotValue": 780310,
       "audienceDistribution": {
         "ageDistribution": {
           "young": 14.2,
@@ -7629,13 +7613,13 @@
       "tagAudienceDistribution": {
         "male": 5,
         "female": 10,
-        "mixed": 2,
+        "mixed": 1,
         "unknown": 8
       },
       "regionDistribution": {
         "domestic": 0,
         "overseas": 1,
-        "unknown": 24
+        "unknown": 23
       },
       "platformDistribution": [
         {
@@ -7644,7 +7628,7 @@
           "avgValue": 6240667,
           "maxValue": 12381000,
           "playletCount": 3,
-          "coverage": 12
+          "coverage": 12.5
         },
         {
           "platform": "wechat",
@@ -7652,15 +7636,15 @@
           "avgValue": 288,
           "maxValue": 1124,
           "playletCount": 13,
-          "coverage": 52
+          "coverage": 54.2
         },
         {
           "platform": "iqiyi",
-          "totalValue": 1495,
-          "avgValue": 1495,
-          "maxValue": 1495,
+          "totalValue": 1492,
+          "avgValue": 1492,
+          "maxValue": 1492,
           "playletCount": 1,
-          "coverage": 4
+          "coverage": 4.2
         },
         {
           "platform": "youku",
@@ -7668,7 +7652,7 @@
           "avgValue": 100,
           "maxValue": 100,
           "playletCount": 2,
-          "coverage": 8
+          "coverage": 8.3
         }
       ],
       "topPlatform": "hongguo",
@@ -7683,10 +7667,6 @@
         },
         {
           "name": "诸云",
-          "count": 1
-        },
-        {
-          "name": "点众",
           "count": 1
         }
       ],
@@ -7722,7 +7702,7 @@
         {
           "name": "十八岁太奶奶驾到，重整家族荣耀第二部",
           "playletId": 1209778,
-          "hotValue": 1495,
+          "hotValue": 1492,
           "appearances": 1,
           "platforms": [
             "iqiyi"
@@ -7743,10 +7723,10 @@
     {
       "position": 13,
       "theme": "大男主",
-      "playletCount": 17,
-      "appearances": 19,
-      "totalHotValue": 17108609,
-      "avgHotValue": 1006389,
+      "playletCount": 16,
+      "appearances": 18,
+      "totalHotValue": 17108484,
+      "avgHotValue": 1069280,
       "audienceDistribution": {
         "ageDistribution": {
           "young": 16.33,
@@ -8961,13 +8941,13 @@
       "tagAudienceDistribution": {
         "male": 15,
         "female": 0,
-        "mixed": 2,
+        "mixed": 1,
         "unknown": 0
       },
       "regionDistribution": {
         "domestic": 0,
         "overseas": 0,
-        "unknown": 17
+        "unknown": 16
       },
       "platformDistribution": [
         {
@@ -8976,15 +8956,15 @@
           "avgValue": 4272750,
           "maxValue": 12338000,
           "playletCount": 4,
-          "coverage": 23.5
+          "coverage": 25
         },
         {
           "platform": "tencent",
-          "totalValue": 15084,
-          "avgValue": 7542,
-          "maxValue": 9130,
+          "totalValue": 14959,
+          "avgValue": 7480,
+          "maxValue": 9133,
           "playletCount": 2,
-          "coverage": 11.8
+          "coverage": 12.5
         },
         {
           "platform": "wechat",
@@ -8992,7 +8972,7 @@
           "avgValue": 404,
           "maxValue": 1124,
           "playletCount": 6,
-          "coverage": 35.3
+          "coverage": 37.5
         },
         {
           "platform": "youku",
@@ -9000,7 +8980,7 @@
           "avgValue": 100,
           "maxValue": 100,
           "playletCount": 1,
-          "coverage": 5.9
+          "coverage": 6.3
         }
       ],
       "topPlatform": "hongguo",
@@ -9011,10 +8991,6 @@
         },
         {
           "name": "掌文",
-          "count": 1
-        },
-        {
-          "name": "点众",
           "count": 1
         }
       ],
@@ -9060,7 +9036,7 @@
         {
           "name": "逍遥四公子",
           "playletId": 1123062,
-          "hotValue": 9130,
+          "hotValue": 9133,
           "appearances": 1,
           "platforms": [
             "tencent"
@@ -9070,6 +9046,397 @@
     },
     {
       "position": 14,
+      "theme": "现代言情",
+      "playletCount": 51,
+      "appearances": 57,
+      "totalHotValue": 14457635,
+      "avgHotValue": 283483,
+      "audienceDistribution": {
+        "ageDistribution": {
+          "young": 26.06,
+          "middle": 57.76,
+          "old": 16.17
+        },
+        "genderDistribution": {
+          "male": 22,
+          "female": 78
+        },
+        "provinceDistribution": [
+          {
+            "name": "广东",
+            "percentage": 10.72
+          },
+          {
+            "name": "江苏",
+            "percentage": 7.77
+          },
+          {
+            "name": "河南",
+            "percentage": 6.94
+          },
+          {
+            "name": "浙江",
+            "percentage": 6.65
+          },
+          {
+            "name": "山东",
+            "percentage": 6.05
+          },
+          {
+            "name": "四川",
+            "percentage": 5.17
+          },
+          {
+            "name": "安徽",
+            "percentage": 5.14
+          },
+          {
+            "name": "河北",
+            "percentage": 4.17
+          },
+          {
+            "name": "湖南",
+            "percentage": 4.1
+          },
+          {
+            "name": "湖北",
+            "percentage": 4.02
+          },
+          {
+            "name": "云南",
+            "percentage": 3.98
+          },
+          {
+            "name": "福建",
+            "percentage": 3.7
+          },
+          {
+            "name": "广西",
+            "percentage": 3.5
+          },
+          {
+            "name": "江西",
+            "percentage": 3.24
+          },
+          {
+            "name": "陕西",
+            "percentage": 3.06
+          }
+        ],
+        "cityDistribution": [
+          {
+            "name": "广州",
+            "percentage": 2.36
+          },
+          {
+            "name": "深圳",
+            "percentage": 2.25
+          },
+          {
+            "name": "成都",
+            "percentage": 1.96
+          },
+          {
+            "name": "重庆",
+            "percentage": 1.87
+          },
+          {
+            "name": "上海",
+            "percentage": 1.71
+          },
+          {
+            "name": "苏州",
+            "percentage": 1.71
+          },
+          {
+            "name": "北京",
+            "percentage": 1.52
+          },
+          {
+            "name": "杭州",
+            "percentage": 1.46
+          },
+          {
+            "name": "南京",
+            "percentage": 1.4
+          },
+          {
+            "name": "东莞",
+            "percentage": 1.29
+          },
+          {
+            "name": "郑州",
+            "percentage": 1.25
+          },
+          {
+            "name": "武汉",
+            "percentage": 1.13
+          },
+          {
+            "name": "昆明",
+            "percentage": 1.11
+          },
+          {
+            "name": "佛山",
+            "percentage": 1.07
+          },
+          {
+            "name": "宁波",
+            "percentage": 1
+          },
+          {
+            "name": "西安",
+            "percentage": 0.98
+          },
+          {
+            "name": "无锡",
+            "percentage": 0.93
+          },
+          {
+            "name": "温州",
+            "percentage": 0.93
+          },
+          {
+            "name": "合肥",
+            "percentage": 0.93
+          },
+          {
+            "name": "济南",
+            "percentage": 0.91
+          },
+          {
+            "name": "长沙",
+            "percentage": 0.9
+          },
+          {
+            "name": "青岛",
+            "percentage": 0.85
+          },
+          {
+            "name": "天津",
+            "percentage": 0.83
+          },
+          {
+            "name": "南通",
+            "percentage": 0.78
+          },
+          {
+            "name": "南宁",
+            "percentage": 0.77
+          },
+          {
+            "name": "惠州",
+            "percentage": 0.75
+          },
+          {
+            "name": "临沂",
+            "percentage": 0.73
+          },
+          {
+            "name": "洛阳",
+            "percentage": 0.69
+          },
+          {
+            "name": "贵阳",
+            "percentage": 0.67
+          },
+          {
+            "name": "石家庄",
+            "percentage": 0.67
+          },
+          {
+            "name": "福州",
+            "percentage": 0.67
+          },
+          {
+            "name": "金华",
+            "percentage": 0.67
+          },
+          {
+            "name": "南阳",
+            "percentage": 0.62
+          },
+          {
+            "name": "常州",
+            "percentage": 0.62
+          },
+          {
+            "name": "徐州",
+            "percentage": 0.62
+          },
+          {
+            "name": "潍坊",
+            "percentage": 0.6
+          },
+          {
+            "name": "泉州",
+            "percentage": 0.59
+          },
+          {
+            "name": "南昌",
+            "percentage": 0.58
+          },
+          {
+            "name": "周口",
+            "percentage": 0.56
+          },
+          {
+            "name": "烟台",
+            "percentage": 0.54
+          },
+          {
+            "name": "中山",
+            "percentage": 0.54
+          },
+          {
+            "name": "汕头",
+            "percentage": 0.54
+          },
+          {
+            "name": "绍兴",
+            "percentage": 0.53
+          },
+          {
+            "name": "台州",
+            "percentage": 0.53
+          },
+          {
+            "name": "太原",
+            "percentage": 0.53
+          },
+          {
+            "name": "阜阳",
+            "percentage": 0.51
+          },
+          {
+            "name": "商丘",
+            "percentage": 0.49
+          },
+          {
+            "name": "新乡",
+            "percentage": 0.49
+          },
+          {
+            "name": "济宁",
+            "percentage": 0.48
+          },
+          {
+            "name": "盐城",
+            "percentage": 0.47
+          }
+        ]
+      },
+      "tagAudienceDistribution": {
+        "male": 9,
+        "female": 20,
+        "mixed": 0,
+        "unknown": 22
+      },
+      "regionDistribution": {
+        "domestic": 2,
+        "overseas": 0,
+        "unknown": 49
+      },
+      "platformDistribution": [
+        {
+          "platform": "hongguo",
+          "totalValue": 14411000,
+          "avgValue": 1310091,
+          "maxValue": 4026000,
+          "playletCount": 11,
+          "coverage": 21.6
+        },
+        {
+          "platform": "tencent",
+          "totalValue": 38253,
+          "avgValue": 7651,
+          "maxValue": 8759,
+          "playletCount": 5,
+          "coverage": 9.8
+        },
+        {
+          "platform": "wechat",
+          "totalValue": 4281,
+          "avgValue": 268,
+          "maxValue": 1124,
+          "playletCount": 16,
+          "coverage": 31.4
+        },
+        {
+          "platform": "iqiyi",
+          "totalValue": 3401,
+          "avgValue": 1701,
+          "maxValue": 2040,
+          "playletCount": 2,
+          "coverage": 3.9
+        },
+        {
+          "platform": "youku",
+          "totalValue": 700,
+          "avgValue": 100,
+          "maxValue": 100,
+          "playletCount": 7,
+          "coverage": 13.7
+        }
+      ],
+      "topPlatform": "hongguo",
+      "topPublishers": [
+        {
+          "name": "番茄",
+          "count": 7
+        }
+      ],
+      "topPlaylets": [
+        {
+          "name": "母凭子贵后被皇家宠上天第二季",
+          "playletId": 4410577,
+          "hotValue": 4026000,
+          "appearances": 2,
+          "platforms": [
+            "hongguo"
+          ]
+        },
+        {
+          "name": "陆太太是来离婚的之慵便枕玉凉",
+          "playletId": 4433307,
+          "hotValue": 2671000,
+          "appearances": 2,
+          "platforms": [
+            "hongguo"
+          ]
+        },
+        {
+          "name": "时队长好像暗恋我之幸得回首又见你",
+          "playletId": 4457586,
+          "hotValue": 2193000,
+          "appearances": 1,
+          "platforms": [
+            "hongguo"
+          ]
+        },
+        {
+          "name": "听懂喵喵语，我在京都混成了香饽饽",
+          "playletId": 4371236,
+          "hotValue": 2012000,
+          "appearances": 1,
+          "platforms": [
+            "hongguo"
+          ]
+        },
+        {
+          "name": "美人如玉刀如风",
+          "playletId": 4542001,
+          "hotValue": 1219000,
+          "appearances": 1,
+          "audience": null,
+          "platforms": [
+            "hongguo"
+          ]
+        }
+      ]
+    },
+    {
+      "position": 15,
       "theme": "悬疑推理",
       "playletCount": 4,
       "appearances": 4,
@@ -10344,401 +10711,6 @@
           "appearances": 1,
           "audience": null,
           "platforms": []
-        }
-      ]
-    },
-    {
-      "position": 15,
-      "theme": "现代言情",
-      "playletCount": 49,
-      "appearances": 55,
-      "totalHotValue": 12444562,
-      "avgHotValue": 253971,
-      "audienceDistribution": {
-        "ageDistribution": {
-          "young": 26.06,
-          "middle": 57.76,
-          "old": 16.17
-        },
-        "genderDistribution": {
-          "male": 22,
-          "female": 78
-        },
-        "provinceDistribution": [
-          {
-            "name": "广东",
-            "percentage": 10.72
-          },
-          {
-            "name": "江苏",
-            "percentage": 7.77
-          },
-          {
-            "name": "河南",
-            "percentage": 6.94
-          },
-          {
-            "name": "浙江",
-            "percentage": 6.65
-          },
-          {
-            "name": "山东",
-            "percentage": 6.05
-          },
-          {
-            "name": "四川",
-            "percentage": 5.17
-          },
-          {
-            "name": "安徽",
-            "percentage": 5.14
-          },
-          {
-            "name": "河北",
-            "percentage": 4.17
-          },
-          {
-            "name": "湖南",
-            "percentage": 4.1
-          },
-          {
-            "name": "湖北",
-            "percentage": 4.02
-          },
-          {
-            "name": "云南",
-            "percentage": 3.98
-          },
-          {
-            "name": "福建",
-            "percentage": 3.7
-          },
-          {
-            "name": "广西",
-            "percentage": 3.5
-          },
-          {
-            "name": "江西",
-            "percentage": 3.24
-          },
-          {
-            "name": "陕西",
-            "percentage": 3.06
-          }
-        ],
-        "cityDistribution": [
-          {
-            "name": "广州",
-            "percentage": 2.36
-          },
-          {
-            "name": "深圳",
-            "percentage": 2.25
-          },
-          {
-            "name": "成都",
-            "percentage": 1.96
-          },
-          {
-            "name": "重庆",
-            "percentage": 1.87
-          },
-          {
-            "name": "上海",
-            "percentage": 1.71
-          },
-          {
-            "name": "苏州",
-            "percentage": 1.71
-          },
-          {
-            "name": "北京",
-            "percentage": 1.52
-          },
-          {
-            "name": "杭州",
-            "percentage": 1.46
-          },
-          {
-            "name": "南京",
-            "percentage": 1.4
-          },
-          {
-            "name": "东莞",
-            "percentage": 1.29
-          },
-          {
-            "name": "郑州",
-            "percentage": 1.25
-          },
-          {
-            "name": "武汉",
-            "percentage": 1.13
-          },
-          {
-            "name": "昆明",
-            "percentage": 1.11
-          },
-          {
-            "name": "佛山",
-            "percentage": 1.07
-          },
-          {
-            "name": "宁波",
-            "percentage": 1
-          },
-          {
-            "name": "西安",
-            "percentage": 0.98
-          },
-          {
-            "name": "无锡",
-            "percentage": 0.93
-          },
-          {
-            "name": "温州",
-            "percentage": 0.93
-          },
-          {
-            "name": "合肥",
-            "percentage": 0.93
-          },
-          {
-            "name": "济南",
-            "percentage": 0.91
-          },
-          {
-            "name": "长沙",
-            "percentage": 0.9
-          },
-          {
-            "name": "青岛",
-            "percentage": 0.85
-          },
-          {
-            "name": "天津",
-            "percentage": 0.83
-          },
-          {
-            "name": "南通",
-            "percentage": 0.78
-          },
-          {
-            "name": "南宁",
-            "percentage": 0.77
-          },
-          {
-            "name": "惠州",
-            "percentage": 0.75
-          },
-          {
-            "name": "临沂",
-            "percentage": 0.73
-          },
-          {
-            "name": "洛阳",
-            "percentage": 0.69
-          },
-          {
-            "name": "贵阳",
-            "percentage": 0.67
-          },
-          {
-            "name": "石家庄",
-            "percentage": 0.67
-          },
-          {
-            "name": "福州",
-            "percentage": 0.67
-          },
-          {
-            "name": "金华",
-            "percentage": 0.67
-          },
-          {
-            "name": "南阳",
-            "percentage": 0.62
-          },
-          {
-            "name": "常州",
-            "percentage": 0.62
-          },
-          {
-            "name": "徐州",
-            "percentage": 0.62
-          },
-          {
-            "name": "潍坊",
-            "percentage": 0.6
-          },
-          {
-            "name": "泉州",
-            "percentage": 0.59
-          },
-          {
-            "name": "南昌",
-            "percentage": 0.58
-          },
-          {
-            "name": "周口",
-            "percentage": 0.56
-          },
-          {
-            "name": "烟台",
-            "percentage": 0.54
-          },
-          {
-            "name": "中山",
-            "percentage": 0.54
-          },
-          {
-            "name": "汕头",
-            "percentage": 0.54
-          },
-          {
-            "name": "绍兴",
-            "percentage": 0.53
-          },
-          {
-            "name": "台州",
-            "percentage": 0.53
-          },
-          {
-            "name": "太原",
-            "percentage": 0.53
-          },
-          {
-            "name": "阜阳",
-            "percentage": 0.51
-          },
-          {
-            "name": "商丘",
-            "percentage": 0.49
-          },
-          {
-            "name": "新乡",
-            "percentage": 0.49
-          },
-          {
-            "name": "济宁",
-            "percentage": 0.48
-          },
-          {
-            "name": "盐城",
-            "percentage": 0.47
-          }
-        ]
-      },
-      "tagAudienceDistribution": {
-        "male": 9,
-        "female": 19,
-        "mixed": 1,
-        "unknown": 20
-      },
-      "regionDistribution": {
-        "domestic": 1,
-        "overseas": 0,
-        "unknown": 48
-      },
-      "platformDistribution": [
-        {
-          "platform": "hongguo",
-          "totalValue": 12399000,
-          "avgValue": 1239900,
-          "maxValue": 4026000,
-          "playletCount": 10,
-          "coverage": 20.4
-        },
-        {
-          "platform": "tencent",
-          "totalValue": 38545,
-          "avgValue": 7709,
-          "maxValue": 9008,
-          "playletCount": 5,
-          "coverage": 10.2
-        },
-        {
-          "platform": "wechat",
-          "totalValue": 4281,
-          "avgValue": 268,
-          "maxValue": 1124,
-          "playletCount": 16,
-          "coverage": 32.7
-        },
-        {
-          "platform": "iqiyi",
-          "totalValue": 2036,
-          "avgValue": 2036,
-          "maxValue": 2036,
-          "playletCount": 1,
-          "coverage": 2
-        },
-        {
-          "platform": "youku",
-          "totalValue": 700,
-          "avgValue": 100,
-          "maxValue": 100,
-          "playletCount": 7,
-          "coverage": 14.3
-        }
-      ],
-      "topPlatform": "hongguo",
-      "topPublishers": [
-        {
-          "name": "番茄",
-          "count": 7
-        },
-        {
-          "name": "点众",
-          "count": 1
-        }
-      ],
-      "topPlaylets": [
-        {
-          "name": "母凭子贵后被皇家宠上天第二季",
-          "playletId": 4410577,
-          "hotValue": 4026000,
-          "appearances": 2,
-          "platforms": [
-            "hongguo"
-          ]
-        },
-        {
-          "name": "陆太太是来离婚的之慵便枕玉凉",
-          "playletId": 4433307,
-          "hotValue": 2671000,
-          "appearances": 2,
-          "platforms": [
-            "hongguo"
-          ]
-        },
-        {
-          "name": "时队长好像暗恋我之幸得回首又见你",
-          "playletId": 4457586,
-          "hotValue": 2193000,
-          "appearances": 1,
-          "platforms": [
-            "hongguo"
-          ]
-        },
-        {
-          "name": "美人如玉刀如风",
-          "playletId": 4542001,
-          "hotValue": 1219000,
-          "appearances": 1,
-          "audience": null,
-          "platforms": [
-            "hongguo"
-          ]
-        },
-        {
-          "name": "陆总暗恋的秘书结婚了",
-          "playletId": 4524490,
-          "hotValue": 881000,
-          "appearances": 1,
-          "platforms": [
-            "hongguo"
-          ]
         }
       ]
     },
