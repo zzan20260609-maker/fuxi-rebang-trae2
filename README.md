@@ -1,3 +1,5 @@
-# 孚希题材榜
+# fuxi-rebang-trae2
 
-五层分类体系题材榜数据分析平台。
+短剧题材榜工具集
+
+- novel-txt.html — 小说转 TXT 工具
